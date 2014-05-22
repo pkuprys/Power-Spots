@@ -457,7 +457,13 @@ function MapPosition(){
 	//Build a valid MapQuest OpenMaps tile request for the current location
 	multiplier=mapSize[indexSize]/640.0;  //Tile Size= 640*multiplier
 	//ATENTTION: If you want to implement maps from a different tiles provider, modify the following url accordingly to create a valid request
+
+	//"http://maps.googleapis.com/maps/api/staticmap?parameters"
 	url="http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
+
+	//Tried the below for google maps but it doesn't quite work
+	//url="https://maps.googleapis.com/maps/api/js?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
+
 	tempLat = fixLat; 
 	tempLon = fixLon;
 
