@@ -72,7 +72,8 @@ function OnGUI () {
 		GUI.Label(Rect(screenX/40,3*screenY/50,screenX-screenX/20,screenY/50),"Zoom Level: "+ zoom,style2);
 		GUI.Label(Rect(screenX/40,5*screenY/50,screenX-screenX/20,screenY/50),"Error(m): "+ error,style2);
 		
-		GUI.Label(Rect(screenX/40,7*screenY/50,screenX-screenX/20,screenY/25), "Status: "+status,style);
+		//GUI.Label(Rect(screenX/40,7*screenY/50,screenX-screenX/20,screenY/25), "Status: "+status,style);
+		GUI.Label(Rect(screenX/40,7*screenY/50,screenX-screenX/20,screenY/25), "Status: Chaos Reigns",style);
 		GUI.EndGroup ();
 	}
 }
