@@ -1,0 +1,31 @@
+# =============== #
+# Unity generated #
+# =============== #
+MapNav_3_PowerS_5_22/Temp/
+MapNav_3_PowerS_5_22/Library/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+MapNav_3_PowerS_5_22/ExportedObj/
+MapNav_3_PowerS_5_22/obj/
+*.svd
+*.userprefs
+MapNav_3_PowerS_5_22/*.csproj
+*.pidb
+*.suo
+MapNav_3_PowerS_5_22/*.sln
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+*.DS_Store
+*.DS_Store?
+*._*
+*.Spotlight-V100
+*.Trashes
+ehthumbs.db
+Thumbs.db
