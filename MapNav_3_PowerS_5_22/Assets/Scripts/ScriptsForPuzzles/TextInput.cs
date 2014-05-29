@@ -16,7 +16,7 @@ public class TextInput : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		stringToEdit = GUI.TextField(new Rect(300, 300, 165,35), stringToEdit, 10, inputTextStyle);
+		stringToEdit = GUI.TextField(new Rect(280, 300, 200, 35), stringToEdit, 10, inputTextStyle);
 	}
 
 	// Update is called once per frame
