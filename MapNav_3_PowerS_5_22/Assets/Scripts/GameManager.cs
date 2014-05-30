@@ -24,7 +24,7 @@ public class GameManager : Singleton<GameManager> {
     private static string SELECTED = "Selected";
     private static string NO_MOD = "";
 
-    public static int TEAM_COUNT = 16;
+	public static int TEAM_COUNT = 16;
     public static int DISABLED_LAYER = 9;
     public static int ENABLED_LAYER = 0;
 
