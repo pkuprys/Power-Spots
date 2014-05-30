@@ -22,7 +22,7 @@ public class GameManager : Singleton<GameManager> {
     private static string TEAM = "Team";
     private static string DISABLED = "Disabled";
     private static string SELECTED = "Selected";
-    private static string NO_MOD = "";
+    private static string AVAILABLE = "";
 
 	public static int TEAM_COUNT = 16;
     public static int DISABLED_LAYER = 9;
@@ -33,13 +33,14 @@ public class GameManager : Singleton<GameManager> {
     private Dictionary<string, GameObject> buttons = new Dictionary<string, GameObject>(TEAM_COUNT);
     private Dictionary<string, Team> teams = new Dictionary<string, Team>(TEAM_COUNT);
     private TeamButton currentSelection;
+    private DateTime? lastUpdatedTime;
 	
     protected GameManager(){}
 		
 	void Start () {
 		DontDestroyOnLoad(this);
         StartCoroutine("InitButtons");
-//        StartCoroutine("CheckForUpdates");
+        StartCoroutine("CheckForUpdates");
     }
 
     private IEnumerator InitButtons(){
@@ -48,28 +49,39 @@ public class GameManager : Singleton<GameManager> {
         IEnumerable<Team> allTeams = query.Result;
         int i = 0;
         foreach(Team team in allTeams){
+            if(i >= TEAM_COUNT){
+                break;
+            }
             teams.Add(team.ObjectId, team);
             addButton(team, i);
             i++;
+            lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
         }
+
     }
     
     private IEnumerator CheckForUpdates(){
         yield return null;
-//        while(true){
-//            yield return new WaitForSeconds(POLL_INTERVAL);
-//            
-//            var query = ParseObject.GetQuery(SPOT_INFO).WhereGreaterThan("updatedAt", lastUpdatedTime).FindAsync();
-//            while(!query.IsCompleted) yield return null;
-//            IEnumerable<ParseObject> results = query.Result;
-//            foreach(ParseObject spotInfo in results){
-//                Color color = ParseUtil.GetColor(spotInfo);
-//                GameObject spot;
-//                spots.TryGetValue(spotInfo.ObjectId, out spot);
-//                spot.renderer.material.color = color;
-//                lastUpdatedTime = ParseUtil.GetLatestTime(spotInfo, lastUpdatedTime);
-//            }
-//        }
+        while(true){
+            yield return new WaitForSeconds(POLL_INTERVAL);
+            var query = new ParseQuery<Team>().WhereGreaterThan("updatedAt", lastUpdatedTime).FindAsync();
+            while(!query.IsCompleted) yield return null;
+            IEnumerable<Team> updatedTeams = query.Result;
+            foreach(Team team in updatedTeams){
+                GameObject button;
+                buttons.TryGetValue(team.ObjectId, out button);
+                if(team.IsSignedIn){    
+                    SetStatus(team.ObjectId, DISABLED);
+                    readyTeamsCount++;
+                }
+                else{
+                    SetStatus(team.ObjectId, AVAILABLE);
+                    readyTeamsCount--;
+
+                }
+                lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
+            }
+        }
     }
 	
 	private void addButton(Team team, int index){
@@ -78,7 +90,7 @@ public class GameManager : Singleton<GameManager> {
         float y = row * Y_COL_DIFF;
         Vector3 position = new Vector3(x + X_ANCHOR, y + Y_ANCHOR, Z_ANCHOR);
         GameObject go = (GameObject) Instantiate(buttonPrefab, position, Quaternion.identity);
-        go.renderer.material.mainTexture = GetButtonTexture(team, NO_MOD);
+        go.renderer.material.mainTexture = GetButtonTexture(team, AVAILABLE);
         go.renderer.material.shader = Shader.Find("Unlit/Transparent");
 		TeamButton button = (TeamButton) go.GetComponent<TeamButton>();
         string id = team.ObjectId;
@@ -103,7 +115,7 @@ public class GameManager : Singleton<GameManager> {
 			return;
 		}
 		if(currentSelection != null){
-            SetStatus(currentSelection.Id, NO_MOD);
+            SetStatus(currentSelection.Id, AVAILABLE);
 		}
 		if(currentSelection == newSelection){
             //unselecting

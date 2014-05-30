@@ -23,7 +23,6 @@ public class SpotManager : Singleton<SpotManager> {
 	
 	protected SpotManager(){}
 	
-	// Use this for initialization
 	void Start () {
 		StartCoroutine("InitSpots");
 		StartCoroutine("CheckForUpdates");
@@ -34,31 +33,12 @@ public class SpotManager : Singleton<SpotManager> {
 		while(!query.IsCompleted) yield return null;
 		IEnumerable<ParseObject> results = query.Result;
 		foreach(ParseObject spotInfo in results){
-			Color color = ParseUtil.GetColor(spotInfo);
 			Vector3 position = getSpotPosition(spotInfo);
 			GameObject spot = (GameObject) Instantiate(spotPrefab, position, Quaternion.identity);
-			spot.renderer.material.color = color;
 			spot.GetComponent<SpotChanger>().id = spotInfo.ObjectId;
 			spots.Add(spotInfo.ObjectId, spot);
 			parseSpots.Add(spotInfo.ObjectId, spotInfo);
 			lastUpdatedTime = ParseUtil.GetLatestTime(spotInfo, lastUpdatedTime);
-		}
-	}
-	
-	private IEnumerator CheckForUpdates(){
-	    while(true){
-	        yield return new WaitForSeconds(POLL_INTERVAL);
-			
-			var query = ParseObject.GetQuery(SPOT_INFO).WhereGreaterThan("updatedAt", lastUpdatedTime).FindAsync();
-			while(!query.IsCompleted) yield return null;
-			IEnumerable<ParseObject> results = query.Result;
-			foreach(ParseObject spotInfo in results){
-				Color color = ParseUtil.GetColor(spotInfo);
-				GameObject spot;
-				spots.TryGetValue(spotInfo.ObjectId, out spot);
-				spot.renderer.material.color = color;
-				lastUpdatedTime = ParseUtil.GetLatestTime(spotInfo, lastUpdatedTime);
-			}
 		}
 	}
 	
