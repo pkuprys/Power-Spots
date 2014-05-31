@@ -41,6 +41,9 @@ public class Team : ParseObject
     }
 
     public bool SignIn(string enteredPin){
+        if(IsSignedIn){
+            return false;
+        }
         return this.PIN.Equals(enteredPin);
     }
 }

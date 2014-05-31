@@ -24,6 +24,9 @@ public class GameManager : Singleton<GameManager> {
     private static string SELECTED = "Selected";
     private static string AVAILABLE = "";
 
+    private static string STATUS_START = "Waiting for ";
+    private static string STATUS_END = " teams to sign in...";
+
 	public static int TEAM_COUNT = 16;
     public static int DISABLED_LAYER = 9;
     public static int ENABLED_LAYER = 0;
@@ -34,16 +37,27 @@ public class GameManager : Singleton<GameManager> {
     private Dictionary<string, Team> teams = new Dictionary<string, Team>(TEAM_COUNT);
     private TeamButton currentSelection;
     private DateTime? lastUpdatedTime;
+
+    private bool waitForTeams = true;
+    private bool isGuiOn = true;
+    public GUIText statusOfTeams;
 	
     protected GameManager(){}
 		
 	void Start () {
 		DontDestroyOnLoad(this);
         StartCoroutine("InitButtons");
-        StartCoroutine("CheckForUpdates");
+        StartCoroutine("CheckForUpdatesThenStartGame");
     }
 
+    void Update () {}
+
     private IEnumerator InitButtons(){
+        GameObject go = new GameObject("StatusOfTeams");
+        go.transform.position = new Vector3(0.65f, 0.75f, 0);
+        statusOfTeams = (GUIText) go.AddComponent(typeof(GUIText));
+        statusOfTeams.text = GetStatusOfTeamsText();
+        statusOfTeams.fontSize = 16;
         var query = new ParseQuery<Team>().FindAsync();
         while(!query.IsCompleted) yield return null;
         IEnumerable<Team> allTeams = query.Result;
@@ -53,16 +67,15 @@ public class GameManager : Singleton<GameManager> {
                 break;
             }
             teams.Add(team.ObjectId, team);
-            addButton(team, i);
+            AddButton(team, i);
             i++;
             lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
         }
-
     }
     
-    private IEnumerator CheckForUpdates(){
+    private IEnumerator CheckForUpdatesThenStartGame(){
         yield return null;
-        while(true){
+        while(waitForTeams){
             yield return new WaitForSeconds(POLL_INTERVAL);
             var query = new ParseQuery<Team>().WhereGreaterThan("updatedAt", lastUpdatedTime).FindAsync();
             while(!query.IsCompleted) yield return null;
@@ -71,20 +84,23 @@ public class GameManager : Singleton<GameManager> {
                 GameObject button;
                 buttons.TryGetValue(team.ObjectId, out button);
                 if(team.IsSignedIn){    
+                    ++readyTeamsCount;
                     SetStatus(team.ObjectId, DISABLED);
-                    readyTeamsCount++;
                 }
                 else{
+                    --readyTeamsCount;
                     SetStatus(team.ObjectId, AVAILABLE);
-                    readyTeamsCount--;
-
                 }
                 lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
             }
+            if(readyTeamsCount == TEAM_COUNT){
+                waitForTeams = false;
+            }
         }
+        Application.LoadLevel("PS_MainMapScene");
     }
-	
-	private void addButton(Team team, int index){
+
+	private void AddButton(Team team, int index){
         int row = index / BUTTONS_PER_ROW;
         float x = (index % BUTTONS_PER_ROW) * X_ROW_DIFF + ((row % 2) * X_OFFSET);
         float y = row * Y_COL_DIFF;
@@ -96,7 +112,8 @@ public class GameManager : Singleton<GameManager> {
         string id = team.ObjectId;
         button.Id = id;
 		buttons.Add(id, go);
-		if(team.IsSignedIn){	
+		if(team.IsSignedIn){
+            ++readyTeamsCount;
             SetStatus(id, DISABLED);
 		}
 	}
@@ -105,10 +122,6 @@ public class GameManager : Singleton<GameManager> {
         string teamButtonName = "Buttons/" + TEAM + team.Name + modifier;
         return Resources.Load(teamButtonName, typeof(Texture)) as Texture;
     }
-	
-	void Update () {
-		
-	}
 
 	public void UpdateSelection(TeamButton newSelection){
 		if(newSelection == null){
@@ -125,18 +138,11 @@ public class GameManager : Singleton<GameManager> {
 		currentSelection = newSelection;
         SetStatus(currentSelection.Id, SELECTED);
 	}
-	
-	private void DisableAllButtons(){
-		foreach(string key in buttons.Keys){
-            SetStatus(key, DISABLED);
-		}
-	}
     
     private void SetStatus(string id, string status){
         GameObject go;
-        Team team;
         buttons.TryGetValue(id, out go);
-        teams.TryGetValue(id, out team);
+        Team team = GetTeam(id);
         go.renderer.material.mainTexture = GetButtonTexture(team, status);
         if(DISABLED.Equals(status)){
             go.layer = DISABLED_LAYER;
@@ -144,22 +150,24 @@ public class GameManager : Singleton<GameManager> {
         else {
             go.layer = ENABLED_LAYER;
         }
+        statusOfTeams.text = GetStatusOfTeamsText();
     }
 
-	public TeamButton GetCurrentSelection(){
-		return currentSelection;	
-	}
-	
-	public GameObject[] GetAllButtons(){
-		return buttons.Values.ToArray();	
-	}
+    private string GetStatusOfTeamsText(){
+        return STATUS_START + (TEAM_COUNT - readyTeamsCount) + STATUS_END;
+    }
 
-    public bool SignIn(string teamId, string pin){
+    public Team GetTeam(string id){
         Team team;
-        teams.TryGetValue(teamId, out team);
-        if(team.IsSignedIn){
-            return false;
-        }
-        return team.SignIn(pin);
+        teams.TryGetValue(id, out team);
+        return team;
+    }
+
+    public void Gui(bool state){
+        isGuiOn = state;
+    }
+
+    public bool IsGuiOn(){
+        return isGuiOn;
     }
 }

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Parse;
 
-//TODO look into any threading issues
 public class SpotManager : Singleton<SpotManager> {
 	private static string SPOT_INFO = "SpotInfo";
 	private static string SPOT_INFO_RED = "red";
@@ -14,7 +13,6 @@ public class SpotManager : Singleton<SpotManager> {
 	private static string SPOT_INFO_X_POS = "xPos";
 	private static string SPOT_INFO_Y_POS = "yPos";
 	private static float Z_PLANE = 10;
-	private static float POLL_INTERVAL = 1f;
 	
 	private static Dictionary<string, GameObject> spots = new Dictionary<string, GameObject>();
 	private static Dictionary<string, ParseObject> parseSpots = new Dictionary<string, ParseObject>();
