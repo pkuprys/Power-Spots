@@ -153,4 +153,13 @@ public class GameManager : Singleton<GameManager> {
 	public GameObject[] GetAllButtons(){
 		return buttons.Values.ToArray();	
 	}
+
+    public bool SignIn(string teamId, string pin){
+        Team team;
+        teams.TryGetValue(teamId, out team);
+        if(team.IsSignedIn){
+            return false;
+        }
+        return team.SignIn(pin);
+    }
 }
