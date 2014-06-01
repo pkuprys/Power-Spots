@@ -11,7 +11,7 @@ public class TeamButton : MonoBehaviour {
 
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0) && canInteract()){
-            GameManager.Instance.UpdateSelection(this);
+            LoginManager.Instance.UpdateSelection(this);
             GameObject go = (GameObject) Instantiate(pinDialog, new Vector3(0,0,0), Quaternion.identity);
             PinDialog dialog = (PinDialog) go.GetComponent<PinDialog>();
             dialog.Id = Id;
@@ -19,6 +19,6 @@ public class TeamButton : MonoBehaviour {
     }
 
     private bool canInteract(){
-        return gameObject.layer != GameManager.DISABLED_LAYER && GameManager.Instance.IsGuiOn();
+        return gameObject.layer != LoginManager.DISABLED_LAYER && LoginManager.Instance.IsGuiOn();
     }
 }

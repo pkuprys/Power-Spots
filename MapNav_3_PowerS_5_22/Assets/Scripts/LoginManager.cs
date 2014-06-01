@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class GameManager : Singleton<GameManager> {
+public class LoginManager : Singleton<LoginManager> {
     private string teamID;
     private int readyTeamsCount = 0;
     private static float POLL_INTERVAL = 1f;
@@ -32,6 +32,7 @@ public class GameManager : Singleton<GameManager> {
     public static int ENABLED_LAYER = 0;
 
     public GameObject buttonPrefab;
+    public GUIText statusOfTeams;
 
     private Dictionary<string, GameObject> buttons = new Dictionary<string, GameObject>(TEAM_COUNT);
     private Dictionary<string, Team> teams = new Dictionary<string, Team>(TEAM_COUNT);
@@ -40,9 +41,9 @@ public class GameManager : Singleton<GameManager> {
 
     private bool waitForTeams = true;
     private bool isGuiOn = true;
-    public GUIText statusOfTeams;
+    private bool isSignedIn = true; //TODO toggle this to false
 	
-    protected GameManager(){}
+    protected LoginManager(){}
 		
 	void Start () {
 		DontDestroyOnLoad(this);
@@ -97,7 +98,12 @@ public class GameManager : Singleton<GameManager> {
                 waitForTeams = false;
             }
         }
-        Application.LoadLevel("PS_MainMapScene");
+        if(isSignedIn){
+            Application.LoadLevel("PS_MainMapScene");
+        }
+        else{
+            //TODO what should happen here?
+        }
     }
 
 	private void AddButton(Team team, int index){
@@ -169,5 +175,11 @@ public class GameManager : Singleton<GameManager> {
 
     public bool IsGuiOn(){
         return isGuiOn;
+    }
+
+    public void SignedIn(){
+        //TODO save this flag and the team's info in a file on the iPad in case of reboots
+        //TODO transfer the selected team's info to the GameManager
+        isSignedIn = true;
     }
 }

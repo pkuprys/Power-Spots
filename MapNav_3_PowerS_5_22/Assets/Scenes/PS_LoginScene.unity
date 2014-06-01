@@ -308,7 +308,7 @@ GameObject:
   - 4: {fileID: 2110150573}
   - 114: {fileID: 2110150572}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: LoginManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

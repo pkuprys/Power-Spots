@@ -16,13 +16,13 @@ public class PinDialog : MonoBehaviour {
     
     void OnGUI() {
         if(teamName == null){
-            teamName = GameManager.Instance.GetTeam(Id).Name;
+            teamName = LoginManager.Instance.GetTeam(Id).Name;
         }
         windowRect = GUILayout.Window(0, windowRect, DisplayLoginDialog, "Please enter the four digit PIN for " + teamName);
     }
 
     void DisplayLoginDialog(int windowID) {
-        GameManager.Instance.Gui(false);
+        LoginManager.Instance.Gui(false);
         GUILayout.Space(windowRect.height/2);
 
         GUILayout.BeginHorizontal();
@@ -39,16 +39,17 @@ public class PinDialog : MonoBehaviour {
         {
             GUILayout.FlexibleSpace();
             if (GUILayout.Button("Cancel", GUILayout.ExpandWidth(false))){
-                GameManager.Instance.Gui(true);
+                LoginManager.Instance.Gui(true);
                 Destroy(this.gameObject);
             }
             if (GUILayout.Button("Sign In", GUILayout.ExpandWidth(false))){
-                Team team = GameManager.Instance.GetTeam(Id);
+                Team team = LoginManager.Instance.GetTeam(Id);
                 bool authenticated = team.SignIn(enteredPin);
                 if(authenticated){
                     team.IsSignedIn = true;
                     var save = team.SaveAsync();
                     if(!save.IsFaulted){
+                        LoginManager.Instance.SignedIn();
                         Destroy(this.gameObject);
                     }
                     else{
