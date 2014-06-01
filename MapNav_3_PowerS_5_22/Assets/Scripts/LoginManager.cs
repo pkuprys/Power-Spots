@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class LoginManager : Singleton<LoginManager> {
-    private string teamID;
-    private int readyTeamsCount = 0;
-    private static float POLL_INTERVAL = 1f;
-
+    //BUTTON CONFIGURATIONS
     private static float X_ANCHOR = -6.0f;
     private static float Y_ANCHOR = 4.0f;
     private static float Z_ANCHOR = 1.0f;
@@ -18,30 +15,26 @@ public class LoginManager : Singleton<LoginManager> {
     private static float Y_COL_DIFF = -1.5f;
     private static float X_OFFSET = X_ROW_DIFF/2;
     private static int BUTTONS_PER_ROW = 4;
-
+    //BUTTON NAME PIECES
     private static string TEAM = "Team";
     private static string DISABLED = "Disabled";
     private static string SELECTED = "Selected";
     private static string AVAILABLE = "";
-
+    //TEAM STATUS TEXT
     private static string STATUS_START = "Waiting for ";
     private static string STATUS_END = " teams to sign in...";
 
-	public static int TEAM_COUNT = 16;
-    public static int DISABLED_LAYER = 9;
-    public static int ENABLED_LAYER = 0;
-
-    public GameObject buttonPrefab;
     public GUIText statusOfTeams;
+    public GameObject buttonPrefab;
 
-    private Dictionary<string, GameObject> buttons = new Dictionary<string, GameObject>(TEAM_COUNT);
-    private Dictionary<string, Team> teams = new Dictionary<string, Team>(TEAM_COUNT);
+    private Dictionary<string, GameObject> buttons = new Dictionary<string, GameObject>(GameConstants.TEAM_COUNT);
+    private Dictionary<string, Team> teams = new Dictionary<string, Team>(GameConstants.TEAM_COUNT);
     private TeamButton currentSelection;
     private DateTime? lastUpdatedTime;
-
+    private int readyTeamsCount = 0;
     private bool waitForTeams = true;
     private bool isGuiOn = true;
-    private bool isSignedIn = true; //TODO toggle this to false
+    private bool isSignedIn = true; //TODO toggle this to false once dev complete
 	
     protected LoginManager(){}
 		
@@ -64,7 +57,7 @@ public class LoginManager : Singleton<LoginManager> {
         IEnumerable<Team> allTeams = query.Result;
         int i = 0;
         foreach(Team team in allTeams){
-            if(i >= TEAM_COUNT){
+            if(i >= GameConstants.TEAM_COUNT){
                 break;
             }
             teams.Add(team.ObjectId, team);
@@ -77,7 +70,7 @@ public class LoginManager : Singleton<LoginManager> {
     private IEnumerator CheckForUpdatesThenStartGame(){
         yield return null;
         while(waitForTeams){
-            yield return new WaitForSeconds(POLL_INTERVAL);
+            yield return new WaitForSeconds(GameConstants.POLL_INTERVAL);
             var query = new ParseQuery<Team>().WhereGreaterThan("updatedAt", lastUpdatedTime).FindAsync();
             while(!query.IsCompleted) yield return null;
             IEnumerable<Team> updatedTeams = query.Result;
@@ -94,7 +87,7 @@ public class LoginManager : Singleton<LoginManager> {
                 }
                 lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
             }
-            if(readyTeamsCount == TEAM_COUNT){
+            if(readyTeamsCount == GameConstants.TEAM_COUNT){
                 waitForTeams = false;
             }
         }
@@ -151,16 +144,16 @@ public class LoginManager : Singleton<LoginManager> {
         Team team = GetTeam(id);
         go.renderer.material.mainTexture = GetButtonTexture(team, status);
         if(DISABLED.Equals(status)){
-            go.layer = DISABLED_LAYER;
+            go.layer = GameConstants.DISABLED_LAYER;
         }
         else {
-            go.layer = ENABLED_LAYER;
+            go.layer = GameConstants.ENABLED_LAYER;
         }
         statusOfTeams.text = GetStatusOfTeamsText();
     }
 
     private string GetStatusOfTeamsText(){
-        return STATUS_START + (TEAM_COUNT - readyTeamsCount) + STATUS_END;
+        return STATUS_START + (GameConstants.TEAM_COUNT - readyTeamsCount) + STATUS_END;
     }
 
     public Team GetTeam(string id){
@@ -177,9 +170,10 @@ public class LoginManager : Singleton<LoginManager> {
         return isGuiOn;
     }
 
-    public void SignedIn(){
+    public void SignIn(){
         //TODO save this flag and the team's info in a file on the iPad in case of reboots
-        //TODO transfer the selected team's info to the GameManager
+        Gui(false);
         isSignedIn = true;
+        GameManager.Instance.Team = GetTeam(currentSelection.Id);
     }
 }

@@ -19,6 +19,6 @@ public class TeamButton : MonoBehaviour {
     }
 
     private bool canInteract(){
-        return gameObject.layer != LoginManager.DISABLED_LAYER && LoginManager.Instance.IsGuiOn();
+        return gameObject.layer != GameConstants.DISABLED_LAYER && LoginManager.Instance.IsGuiOn();
     }
 }

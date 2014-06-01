@@ -49,7 +49,7 @@ public class PinDialog : MonoBehaviour {
                     team.IsSignedIn = true;
                     var save = team.SaveAsync();
                     if(!save.IsFaulted){
-                        LoginManager.Instance.SignedIn();
+                        LoginManager.Instance.SignIn();
                         Destroy(this.gameObject);
                     }
                     else{
