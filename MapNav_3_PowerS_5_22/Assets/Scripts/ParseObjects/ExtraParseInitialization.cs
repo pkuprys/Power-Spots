@@ -8,6 +8,6 @@ public class ExtraParseInitialization : MonoBehaviour
         // see https://www.parse.com/docs/unity_guide#subclasses for details
         ParseObject.RegisterSubclass<Team>();
         ParseObject.RegisterSubclass<Spot>();
-
+        ParseObject.RegisterSubclass<Challenge>();
     }
 }
