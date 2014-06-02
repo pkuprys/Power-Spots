@@ -331,8 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ee7bcb8ea08451a8559a4f73252327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 100000, guid: faf20bf73c6b0437a8211cab784fc34f, type: 2}
   statusOfTeams: {fileID: 0}
+  buttonPrefab: {fileID: 100000, guid: faf20bf73c6b0437a8211cab784fc34f, type: 2}
 --- !u!4 &2110150573
 Transform:
   m_ObjectHideFlags: 0
