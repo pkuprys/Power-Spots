@@ -459,7 +459,7 @@ function MapPosition(){
 	//ATENTTION: If you want to implement maps from a different tiles provider, modify the following url accordingly to create a valid request
 
 	//"http://maps.googleapis.com/maps/api/staticmap?parameters"
-	url="http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
+// 	url="http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
 
 	//Tried the below for google maps but it doesn't quite work
 	//url="https://maps.googleapis.com/maps/api/js?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
@@ -468,6 +468,14 @@ function MapPosition(){
 	tempLon = fixLon;
 
 	//=================================================================================================
+	
+	//GOOGLE ================================================================================
+	//Build a valid Google Maps tile request for the current location 
+	//for details see:
+	//	1) https://developers.google.com/maps/documentation/staticmaps/
+	//	2) http://recursivearts.com/mapnav/faq.html
+	url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&format=png32&maptype=roadmap&sensor=false&style=feature:water%7Celement:geometry%7Ccolor:0x193341&style=feature:landscape%7Celement:geometry%7Ccolor:0x2c5a71&style=feature:road%7Celement:geometry%7Ccolor:0x29768a%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x406d80&style=feature:transit%7Celement:geometry%7Ccolor:0x406d80%7Celement:labels.text.stroke%7Cvisibility:on%7Ccolor:0x3e606f%7Cweight:2%7Cgamma:0.84%7Celement:labels.text.fill%7Ccolor:ffffff&style=feature:administrative%7Celement:geometry%7Ccolor:0x1a3541%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x2c5a71";
+//=================================================================================================
 
 	//Proceed with download if an Wireless internet connection is available 
 	if(Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork){
