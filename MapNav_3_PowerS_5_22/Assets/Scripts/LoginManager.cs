@@ -98,7 +98,7 @@ public class LoginManager : Singleton<LoginManager> {
             //TODO what should happen here?
         }
     }
-
+    //test 
 	private void AddButton(Team team, int index){
         int row = index / BUTTONS_PER_ROW;
         float x = (index % BUTTONS_PER_ROW) * X_ROW_DIFF + ((row % 2) * X_OFFSET);
