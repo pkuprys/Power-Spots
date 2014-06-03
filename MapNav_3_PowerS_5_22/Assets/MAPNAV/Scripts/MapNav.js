@@ -7,8 +7,8 @@ var user : Transform;									 //User(Player) transform
 var simGPS : boolean=true;								 //True when the GPS Emulator is enabled
 var userSpeed : float = 5.0;							 //User speed when using the GPS Emulator (keyboard input)
 var realSpeed : boolean = false;						 //If true, the perceived player speed depends on zoom level(realistic behaviour)
-var fixLat : float=42.3627;					   	 		 //Latitude
-var fixLon : float=-71.05686;							 //Longitude
+var fixLat : float = 42.3627;					   	 		 //Latitude
+var fixLon : float =- 71.05686;							 //Longitude
 var altitude : float;									 //Current GPS altitude
 var heading : float;									 //Last compass sensor reading (Emulator disabled) or user's eulerAngles.y (Emulator enabled)
 var accuracy : float;									 //GPS location accuracy (error)

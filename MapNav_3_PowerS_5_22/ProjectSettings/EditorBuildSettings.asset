@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PS_Puzzle1.unity
+    path: Assets/Scenes/PS_LoginScene.unity
   - enabled: 1
     path: Assets/Scenes/PS_MainMapScene.unity
   - enabled: 1
-    path: Assets/Scenes/PS_EndCanvasArea_Scene.unity
+    path: Assets/Scenes/PS_Puzzle1.unity
   - enabled: 1
-    path: Assets/Scenes/PS_Login_Obsolete.unity
+    path: Assets/Scenes/PS_EndCanvasArea_Scene.unity
