@@ -7,37 +7,43 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager> {
+    private static string SPOT = "_spot";
     public Team Team {get; set;}
     private DateTime? lastUpdatedTime;
+
+    private Dictionary<string, GameObject> mapSpots = new Dictionary<string, GameObject>(GameConstants.SPOT_COUNT);
+    private Dictionary<string, Spot> spots = new Dictionary<string, Spot>(GameConstants.SPOT_COUNT);
 	
     protected GameManager(){}
 		
 	void Start () {
 		DontDestroyOnLoad(this);
+        StartCoroutine("InitSpots");
     }
 
     void Update () {}
 
-//    private IEnumerator InitButtons(){
-//        GameObject go = new GameObject("StatusOfTeams");
-//        go.transform.position = new Vector3(0.65f, 0.75f, 0);
-//        statusOfTeams = (GUIText) go.AddComponent(typeof(GUIText));
-//        statusOfTeams.text = GetStatusOfTeamsText();
-//        statusOfTeams.fontSize = 16;
-//        var query = new ParseQuery<Team>().FindAsync();
-//        while(!query.IsCompleted) yield return null;
-//        IEnumerable<Team> allTeams = query.Result;
-//        int i = 0;
-//        foreach(Team team in allTeams){
-//            if(i >= TEAM_COUNT){
-//                break;
-//            }
-//            teams.Add(team.ObjectId, team);
-//            AddButton(team, i);
-//            i++;
-//            lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
-//        }
-//    }
+    private IEnumerator InitSpots(){
+        var query = new ParseQuery<Spot>().FindAsync();
+        while(!query.IsCompleted) yield return null;
+        IEnumerable<Spot> allSpots = query.Result;
+        foreach(Spot spot in allSpots){
+            GameObject mapSpot = GameObject.Find(spot.Name);
+            spots.Add(spot.ObjectId, spot);
+            mapSpots.Add(spot.ObjectId, mapSpot);
+            lastUpdatedTime = ParseUtil.GetLatestTime(spot, lastUpdatedTime);
+
+            Team owner = spot.Owner;
+            if(owner == null){
+                continue;
+            }
+            Task<Team> fetchTask = owner.FetchAsync();
+            while(!fetchTask.IsCompleted) yield return null;
+            string coloredSpotName = "Spots/" + owner.Color + SPOT;
+            Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
+            mapSpot.renderer.material.mainTexture = texture;
+        }
+    }
     
 //    private IEnumerator CheckForUpdatesThenStartGame(){
 //        yield return null;
