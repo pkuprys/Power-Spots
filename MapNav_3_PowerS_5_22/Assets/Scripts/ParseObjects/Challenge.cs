@@ -3,6 +3,13 @@
 [ParseClassName("Challenge")]
 public class Challenge : ParseObject
 {
+    public Challenge(){}
+
+    public Challenge(Team team, Spot spot){
+        this.Team = team;
+        this.Spot = spot;
+    }
+
     [ParseFieldName("success")]
     public bool Success
     {

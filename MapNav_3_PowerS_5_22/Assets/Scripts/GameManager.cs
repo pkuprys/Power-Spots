@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager> {
 
     private Dictionary<string, GameObject> mapSpots = new Dictionary<string, GameObject>(GameConstants.SPOT_COUNT);
     private Dictionary<string, Spot> spots = new Dictionary<string, Spot>(GameConstants.SPOT_COUNT);
+
+    private Challenge pendingChallenge;
 	
     protected GameManager(){}
 		
@@ -29,8 +31,8 @@ public class GameManager : Singleton<GameManager> {
         IEnumerable<Spot> allSpots = query.Result;
         foreach(Spot spot in allSpots){
             GameObject mapSpot = GameObject.Find(spot.Name);
-            spots.Add(spot.ObjectId, spot);
-            mapSpots.Add(spot.ObjectId, mapSpot);
+            spots.Add(spot.Name, spot);
+            mapSpots.Add(spot.Name, mapSpot);
             lastUpdatedTime = ParseUtil.GetLatestTime(spot, lastUpdatedTime);
 
             Team owner = spot.Owner;
@@ -43,6 +45,21 @@ public class GameManager : Singleton<GameManager> {
             Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
             mapSpot.renderer.material.mainTexture = texture;
         }
+    }
+
+    public void Challenge(string spotName){
+        Spot spot;
+        spots.TryGetValue(spotName, out spot);
+        pendingChallenge = new Challenge(Team, spot);
+        pendingChallenge.SaveAsync();
+    }
+
+    public void EndChallenge(bool success){
+        if(pendingChallenge == null){
+            return;
+        }
+        pendingChallenge.Success = success;
+        pendingChallenge.SaveAsync();
     }
     
 //    private IEnumerator CheckForUpdatesThenStartGame(){

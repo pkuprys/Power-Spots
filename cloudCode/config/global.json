@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "PowerSpots_Tokens_5_19": {
+            "applicationId": "i9M9wD4GkjU4jXK1jCvMjtA7IXawMfF2HxYbFpRi", 
+            "masterKey": "j5z2XxUlnZIw1i8cnYGZ0IfeHBlXtVCZxXLCKxCQ"
+        }, 
+        "_default": {
+            "link": "PowerSpots_Tokens_5_19"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}

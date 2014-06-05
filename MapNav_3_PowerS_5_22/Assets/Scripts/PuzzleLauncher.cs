@@ -6,6 +6,7 @@ public class PuzzleLauncher : MonoBehaviour {
 	void Update () {}
 
     public void OnMouseOver(){
+        GameManager.Instance.Challenge(this.gameObject.name);
         if(Input.GetMouseButtonDown(0)){
             Application.LoadLevel("PS_Puzzle1");
         }
