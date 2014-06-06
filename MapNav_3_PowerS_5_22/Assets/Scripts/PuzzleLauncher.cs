@@ -5,10 +5,17 @@ public class PuzzleLauncher : MonoBehaviour {
 	void Start () {}
 	void Update () {}
 
+    public string Puzzle;
+
     public void OnMouseOver(){
-        GameManager.Instance.Challenge(this.gameObject.name);
         if(Input.GetMouseButtonDown(0)){
-            Application.LoadLevel("PS_Puzzle1");
+            bool startChallenge = GameManager.Instance.Challenge(this.gameObject.name);
+            if(startChallenge){
+                Application.LoadLevel(Puzzle);
+            }
+            else{
+                //TODO display a warning message
+            }
         }
     }
 }

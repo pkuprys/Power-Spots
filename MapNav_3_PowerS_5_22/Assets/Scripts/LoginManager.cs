@@ -174,6 +174,9 @@ public class LoginManager : Singleton<LoginManager> {
         //TODO save this flag and the team's info in a file on the iPad in case of reboots
         Gui(false);
         isSignedIn = true;
-        GameManager.Instance.Team = GetTeam(currentSelection.Id);
+    }
+
+    public Team GetSelectedTeam(){
+        return GetTeam(currentSelection.Id);
     }
 }

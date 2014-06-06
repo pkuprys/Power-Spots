@@ -14,8 +14,8 @@ public class LoadMap : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
+        GameManager.Instance.EndChallenge(false);
 		Application.LoadLevel("PS_MainMapScene");
-
 	}
 
 }

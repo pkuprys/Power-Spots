@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager> {
     private static string SPOT = "_spot";
-    public Team Team {get; set;}
+    private Team Team;
     private DateTime? lastUpdatedTime;
 
     private Dictionary<string, GameObject> mapSpots = new Dictionary<string, GameObject>(GameConstants.SPOT_COUNT);
@@ -19,13 +19,14 @@ public class GameManager : Singleton<GameManager> {
     protected GameManager(){}
 		
 	void Start () {
-		DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
         StartCoroutine("InitSpots");
     }
 
     void Update () {}
 
     private IEnumerator InitSpots(){
+        Team = LoginManager.Instance.GetSelectedTeam();
         var query = new ParseQuery<Spot>().FindAsync();
         while(!query.IsCompleted) yield return null;
         IEnumerable<Spot> allSpots = query.Result;
@@ -34,7 +35,6 @@ public class GameManager : Singleton<GameManager> {
             spots.Add(spot.Name, spot);
             mapSpots.Add(spot.Name, mapSpot);
             lastUpdatedTime = ParseUtil.GetLatestTime(spot, lastUpdatedTime);
-
             Team owner = spot.Owner;
             if(owner == null){
                 continue;
@@ -47,11 +47,18 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
-    public void Challenge(string spotName){
+    public bool Challenge(string spotName){
         Spot spot;
         spots.TryGetValue(spotName, out spot);
         pendingChallenge = new Challenge(Team, spot);
-        pendingChallenge.SaveAsync();
+        var save = pendingChallenge.SaveAsync();
+        if(save.IsFaulted){
+            pendingChallenge = null;
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     public void EndChallenge(bool success){
