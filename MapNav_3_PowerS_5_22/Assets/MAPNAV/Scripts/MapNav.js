@@ -461,7 +461,7 @@ function MapPosition(){
 	//"http://maps.googleapis.com/maps/api/staticmap?parameters"
 // 	url="http://open.mapquestapi.com/staticmap/v4/getmap?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
 
-	//Tried the below for google maps but it doesn't quite work
+	//Tried the below for google maps but it doesn't work
 	//url="https://maps.googleapis.com/maps/api/js?key="+key+"&size="+mapSize[indexSize].ToString()+","+mapSize[indexSize].ToString()+"&zoom="+zoom+"&type="+maptype[index]+"&center="+fixLat+","+fixLon+"&scalebar=false";
 
 	tempLat = fixLat; 
@@ -898,12 +898,12 @@ function OnGUI () {
 	}
 	
 	if (ready && !mapping && buttons){
-		GUI.BeginGroup (Rect (0,screenY-screenY/12, screenX, screenY/12));
+		//////////GUI.BeginGroup (Rect (0,screenY-screenY/12, screenX, screenY/12));
 			
-		GUI.Box (Rect (0,0,screenX,screenY/12), "");
+		GUI.Box (Rect (0,screenY/24+10,screenX/10,4*screenY/24), "");
 		
 		//Map type toggle button
-		if (GUI.Button(Rect(0,0,screenX/5,screenY/12), maptype[index])){
+		/*if (GUI.Button(Rect(0,0,screenX/5,screenY/12), maptype[index])){
 			if(mapping==false){
 				if(index<maptype.Length-1)
 		    		index=index+1;
@@ -912,11 +912,11 @@ function OnGUI () {
 		     	MapPosition();
 		     	ReScale();
 			}    
-		}
+		}*/
 		//3D Zoom Buttons
 		if(triDView){
 			//Zoom In button
-			if(GUI.Button(Rect(2*screenX/5,0,screenX/5,screenY/12), "zoom +")){
+			if(GUI.Button(Rect(screenX/5,0,screenX/5,screenY/12), "zoom +")){
 				if(zoom<maxZoom){
 					zoom=zoom+1;
 					MapPosition();
@@ -934,7 +934,10 @@ function OnGUI () {
 		//2D Zoom Buttons
 		}else{
 			//Zoom In button
-			if(GUI.RepeatButton(Rect(2*screenX/5,0,screenX/5,screenY/12), "zoom +")){
+
+			//***************
+
+			if(GUI.RepeatButton(Rect(0,3*screenY/24+10,screenX/10,screenY/24), "zoom +")){
 				if(Input.GetMouseButton(0)){
 					currentOrtoSize = mycam.orthographicSize;
 					currentOrtoSize = Mathf.MoveTowards (currentOrtoSize,3*targetOrtoSize/8,5*32768*Time.deltaTime/Mathf.Pow(2,zoom));
@@ -957,7 +960,10 @@ function OnGUI () {
 				}
 			}
 			//Zoom Out button
-			if (GUI.RepeatButton(Rect(screenX/5,0,screenX/5,screenY/12), "zoom -")){
+
+			//*************
+
+			if (GUI.RepeatButton(Rect(0,2*screenY/24+10,screenX/10,screenY/24), "zoom -")){
 				if(Input.GetMouseButton(0)){
 					currentOrtoSize = mycam.orthographicSize;
 					currentOrtoSize = Mathf.MoveTowards (currentOrtoSize,targetOrtoSize,5*32768*Time.deltaTime/Mathf.Pow(2,zoom));
@@ -989,19 +995,23 @@ function OnGUI () {
 			}	
 		}
 		//Update map and center user position 
-		if (GUI.Button(Rect(3*screenX/5,0,screenX/5,screenY/12), centre)){
+		if (GUI.Button(Rect(0,screenY/24+10,screenX/10,screenY/24), centre)){
 			centering=true;
 			MapPosition();
 			ReScale();
 		}
 		//Show GPS Status info. Please make sure the GPS-Status.js script is attached and enabled in the map object.
-		if (GUI.Button(Rect(4*screenX/5,0,screenX/5,screenY/12), "info")){
+
+		//*************
+
+
+		if (GUI.Button(Rect(0,4*screenY/24+10,screenX/10,screenY/24), "info")){
 			if(info)
 				info=false;
 			else
 				info=true;
 		}
-		GUI.EndGroup ();
+		//////////////////GUI.EndGroup ();
 	}
 }
 
