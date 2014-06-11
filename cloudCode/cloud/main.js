@@ -10,9 +10,14 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
   	if (typeof(success) == 'undefined' || success == null) {
   		console.log("new challenge attempt"); 		
   		//this is a new challenge attempt, see if this challenge is available for this team
+  		var spot = request.object.get("spot");
+  		var team = request.object.get("team");
+  		if(spot == null || team == null){
+  			response.error("An error has occurred, please try again.");
+  		}
   		var query = new Parse.Query("Challenge");
-		query.equalTo("spot", request.object.get("spot"));
-		query.equalTo("team", request.object.get("team"));
+		query.equalTo("spot", spot);
+		query.equalTo("team", team);
 		query.equalTo("success", true);
 		query.count({
   			success: function(count) {

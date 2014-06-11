@@ -7,57 +7,30 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager> {
-    private static string SPOT = "_spot";
-    private Team Team;
     private DateTime? lastUpdatedTime;
-
-    private Dictionary<string, GameObject> mapSpots = new Dictionary<string, GameObject>(GameConstants.SPOT_COUNT);
-    private Dictionary<string, Spot> spots = new Dictionary<string, Spot>(GameConstants.SPOT_COUNT);
 
     private Challenge pendingChallenge;
 	
     protected GameManager(){}
 		
-	void Start () {
-        DontDestroyOnLoad(this);
-        StartCoroutine("InitSpots");
-    }
+	void Start () {}
 
     void Update () {}
 
-    private IEnumerator InitSpots(){
-        Team = LoginManager.Instance.GetSelectedTeam();
-        var query = new ParseQuery<Spot>().FindAsync();
-        while(!query.IsCompleted) yield return null;
-        IEnumerable<Spot> allSpots = query.Result;
-        foreach(Spot spot in allSpots){
-            GameObject mapSpot = GameObject.Find(spot.Name);
-            spots.Add(spot.Name, spot);
-            mapSpots.Add(spot.Name, mapSpot);
-            lastUpdatedTime = ParseUtil.GetLatestTime(spot, lastUpdatedTime);
-            Team owner = spot.Owner;
-            if(owner == null){
-                continue;
-            }
-            Task<Team> fetchTask = owner.FetchAsync();
-            while(!fetchTask.IsCompleted) yield return null;
-            string coloredSpotName = "Spots/" + owner.Color + SPOT;
-            Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
-            mapSpot.renderer.material.mainTexture = texture;
-        }
-    }
-
-    public bool Challenge(string spotName){
-        Spot spot;
-        spots.TryGetValue(spotName, out spot);
-        pendingChallenge = new Challenge(Team, spot);
+    public IEnumerator Challenge(string spotName){
+        GameObject spotsManagerObject = GameObject.Find("SpotsManager");
+        SpotsManager spotsManager = spotsManagerObject.GetComponent<SpotsManager>();
+        Spot spot = spotsManager.GetSpot(spotName);
+        Team team = LoginManager.Instance.GetSelectedTeam();
+        pendingChallenge = new Challenge(team, spot);
         var save = pendingChallenge.SaveAsync();
-        if(save.IsFaulted){
+        while(!save.IsCompleted) yield return null;
+        if(save.IsFaulted || save.IsCanceled){
             pendingChallenge = null;
-            return false;
+            //TODO display an error OR "disable" the spot
         }
         else{
-            return true;
+            Application.LoadLevel(spot.Challenge);;
         }
     }
 
@@ -68,36 +41,4 @@ public class GameManager : Singleton<GameManager> {
         pendingChallenge.Success = success;
         pendingChallenge.SaveAsync();
     }
-    
-//    private IEnumerator CheckForUpdatesThenStartGame(){
-//        yield return null;
-//        while(waitForTeams){
-//            yield return new WaitForSeconds(POLL_INTERVAL);
-//            var query = new ParseQuery<Team>().WhereGreaterThan("updatedAt", lastUpdatedTime).FindAsync();
-//            while(!query.IsCompleted) yield return null;
-//            IEnumerable<Team> updatedTeams = query.Result;
-//            foreach(Team team in updatedTeams){
-//                GameObject button;
-//                buttons.TryGetValue(team.ObjectId, out button);
-//                if(team.IsSignedIn){    
-//                    ++readyTeamsCount;
-//                    SetStatus(team.ObjectId, DISABLED);
-//                }
-//                else{
-//                    --readyTeamsCount;
-//                    SetStatus(team.ObjectId, AVAILABLE);
-//                }
-//                lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
-//            }
-//            if(readyTeamsCount == TEAM_COUNT){
-//                waitForTeams = false;
-//            }
-//        }
-//        if(isSignedIn){
-//            Application.LoadLevel("PS_MainMapScene");
-//        }
-//        else{
-//            //TODO what should happen here?
-//        }
-//    }
 }

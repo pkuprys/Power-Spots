@@ -39,9 +39,10 @@ public class LoginManager : Singleton<LoginManager> {
     protected LoginManager(){}
 		
 	void Start () {
-		DontDestroyOnLoad(this);
         StartCoroutine("InitButtons");
         StartCoroutine("CheckForUpdatesThenStartGame");
+        //calling this to make sure it is instantiated
+        GameManager gm = GameManager.Instance;
     }
 
     void Update () {}
@@ -98,8 +99,8 @@ public class LoginManager : Singleton<LoginManager> {
             //TODO what should happen here?
         }
     }
-    //test 
-	private void AddButton(Team team, int index){
+
+    private void AddButton(Team team, int index){
         int row = index / BUTTONS_PER_ROW;
         float x = (index % BUTTONS_PER_ROW) * X_ROW_DIFF + ((row % 2) * X_OFFSET);
         float y = row * Y_COL_DIFF;

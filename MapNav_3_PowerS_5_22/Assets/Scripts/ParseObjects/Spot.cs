@@ -21,6 +21,13 @@ public class Spot : ParseObject
     public Team Owner
     {
         get { return GetProperty<Team>("Owner"); }
-        set { SetProperty<Team>(value, "Owner"); } // TODO should we set this via Cloud Code?
+        set { SetProperty<Team>(value, "Owner"); }
+    }
+
+    [ParseFieldName("challenge")]
+    public string Challenge
+    {
+        get { return GetProperty<string>("Challenge"); }
+        set { SetProperty<string>(value, "Challenge"); }
     }
 }
