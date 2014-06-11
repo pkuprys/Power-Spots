@@ -1481,7 +1481,7 @@ MonoBehaviour:
   maptype: []
   mapSize: 
   index: 0
-  indexSize: 0
+  indexSize: 1
   camDist: 88.0999985
   camAngle: 40
   initTime: 3
@@ -2018,7 +2018,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: indexSize
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: userSpeed
