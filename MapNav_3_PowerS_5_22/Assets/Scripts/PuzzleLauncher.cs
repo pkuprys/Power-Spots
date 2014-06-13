@@ -11,10 +11,8 @@ public class PuzzleLauncher : MonoBehaviour {
     }
     void Update () {}
 
-
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0) && isActive){
-            print("STARTING");
              StartCoroutine(GameManager.Instance.Challenge(this.gameObject.name));
         }
     }

@@ -8,19 +8,16 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager> {
     private DateTime? lastUpdatedTime;
-
     private Challenge pendingChallenge;
+    private SpotsManager spotsManager;
 	
     protected GameManager(){}
 		
 	void Start () {}
-
     void Update () {}
 
     public IEnumerator Challenge(string spotName){
-        GameObject spotsManagerObject = GameObject.Find("SpotsManager");
-        SpotsManager spotsManager = spotsManagerObject.GetComponent<SpotsManager>();
-        Spot spot = spotsManager.GetSpot(spotName);
+        Spot spot = GetSpotsManager().GetSpot(spotName);
         Team team = LoginManager.Instance.GetSelectedTeam();
         pendingChallenge = new Challenge(team, spot);
         var save = pendingChallenge.SaveAsync();
@@ -38,7 +35,17 @@ public class GameManager : Singleton<GameManager> {
         if(pendingChallenge == null){
             return;
         }
-        pendingChallenge.Success = success;
-        pendingChallenge.SaveAsync();
+        else{
+            pendingChallenge.Success = success;
+            pendingChallenge.SaveAsync();
+        }
+    }
+
+    private SpotsManager GetSpotsManager(){
+        if(spotsManager == null){
+            GameObject spotsManagerObject = GameObject.Find("SpotsManager");
+            spotsManager = spotsManagerObject.GetComponent<SpotsManager>();
+        }
+        return spotsManager;
     }
 }

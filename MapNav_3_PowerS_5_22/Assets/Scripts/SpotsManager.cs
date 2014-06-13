@@ -12,6 +12,8 @@ public class SpotsManager : MonoBehaviour {
     private Dictionary<string, Spot> spots = new Dictionary<string, Spot>(GameConstants.SPOT_COUNT);
     private DateTime? lastUpdatedTime;
 
+    public GameObject Token;
+
 	void Start () {
         StartCoroutine("RenderSpots");
 	}
@@ -22,6 +24,12 @@ public class SpotsManager : MonoBehaviour {
         Spot spot;
         spots.TryGetValue(name, out spot);
         return spot;
+    }
+
+    public GameObject GetMapSpot(string name){
+        GameObject mapSpot;
+        mapSpots.TryGetValue(name, out mapSpot);
+        return mapSpot;
     }
 
     private IEnumerator RenderSpots(){
@@ -67,9 +75,12 @@ public class SpotsManager : MonoBehaviour {
         }
     }
 
-    static void updateOwner(GameObject mapSpot, Team owner) {
+    public void updateOwner(GameObject mapSpot, Team owner) {
         string coloredSpotName = "Spots/" + owner.Color + SPOT;
         Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
         mapSpot.renderer.material.mainTexture = texture;
+        if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId)){
+            Instantiate(Token, mapSpot.transform.position, Quaternion.identity);
+        }
     }
 }
