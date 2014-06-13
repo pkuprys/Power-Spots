@@ -6,9 +6,9 @@ PlayerSettings:
   serializedVersion: 3
   AndroidProfiler: 0
   defaultScreenOrientation: 2
-  targetDevice: 1
+  targetDevice: 2
   targetGlesGraphics: -1
-  targetResolution: 7
+  targetResolution: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: MapNav_3_PowerS_5_22
