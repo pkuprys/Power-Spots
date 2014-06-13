@@ -13,6 +13,6 @@ public class TextInput : MonoBehaviour {
     void Update () {}
 
 	void OnGUI() {
-		StringToEdit = GUI.TextField(new Rect(xPos, yPos, width, height), StringToEdit, 100, inputTextStyle);
+				StringToEdit = GUI.TextField(new Rect(xPos, yPos, width, height), StringToEdit, 70, inputTextStyle);
 	}
 }
