@@ -80,7 +80,8 @@ public class SpotsManager : MonoBehaviour {
         Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
         mapSpot.renderer.material.mainTexture = texture;
         if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId)){
-            Instantiate(Token, mapSpot.transform.position, Quaternion.identity);
+            //TODO Tokens get added no matter what, they should only be added after completing a challenge
+            Instantiate(Token, mapSpot.transform.position + new Vector3(0f,0f,0.75f), Quaternion.identity);
         }
     }
 }
