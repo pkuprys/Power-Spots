@@ -5,6 +5,8 @@ private var mapnav: MapNav;
 private var initText: Transform;
 private var initBackg: Transform; 
 
+public static var loadTray : boolean ;
+
 function Awake(){
 	//Reference to the MapNav.js script and GUI elements
 	mapnav=GameObject.FindGameObjectWithTag("GameController").GetComponent(MapNav);
@@ -33,10 +35,13 @@ function Update () {
 	else{
 		//Clear messages once the map is ready
 		initText.guiText.text= "";	
+
+
+		loadTray = true;
 		
 		//Disable initial screen
 		initBackg.gameObject.SetActive(false);
-		
+
 		//Disable this script (no longer needed)
 		this.enabled=false;
 	}
