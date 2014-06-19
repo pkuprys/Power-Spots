@@ -8,7 +8,7 @@ public class PuzzleLauncher : MonoBehaviour {
 
     void Start () {
         redCircle = GameObject.Find(this.gameObject.name + "_red_circle");
-        redCircle.active = isActive;
+        redCircle.SetActive(isActive);
     }
     void Update () {}
 
@@ -21,12 +21,12 @@ public class PuzzleLauncher : MonoBehaviour {
         }
     }
 
-    public void OnTriggerEnter (Collider col){
+    public void OnTriggerEnter(Collider col){
         isActive = true;
         redCircle.SetActive(true);
     }
 
-    public void OnTriggerExit (Collider col){
+    public void OnTriggerExit(Collider col){
         isActive = false;
         redCircle.SetActive(false);
     }

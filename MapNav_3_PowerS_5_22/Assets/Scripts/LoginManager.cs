@@ -41,8 +41,11 @@ public class LoginManager : Singleton<LoginManager> {
 	void Start () {
         StartCoroutine("InitButtons");
         StartCoroutine("CheckForUpdatesThenStartGame");
+
+        #pragma warning disable 219
         //calling this to make sure it is instantiated
         GameManager gm = GameManager.Instance;
+        #pragma warning restore 219
     }
 
     void Update () {}
