@@ -29,13 +29,10 @@ public class PuzzleSubmitButton_2 : MonoBehaviour {
 	public void OnMouseOver(){
 		if(Input.GetMouseButtonUp(0)){
 			if(myTextInput.GetComponent<TextInput>().StringToEdit.Equals(answer1)){
-
 				lineRendererObject_1.renderer.material = yellow;
 				correctAnswers++;
 				print ("Correct Answers : " + correctAnswers);
-
 			}
-		
 		}
 	}
 }
