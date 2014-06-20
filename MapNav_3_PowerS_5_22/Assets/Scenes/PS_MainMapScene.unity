@@ -3357,6 +3357,7 @@ GameObject:
   - 124: {fileID: 1763822346}
   - 114: {fileID: 1763822345}
   - 114: {fileID: 1763822350}
+  - 114: {fileID: 1763822351}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3451,6 +3452,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamColorReminder: {fileID: 2800000, guid: 43b79ba25b7b9455c9135badf4ac1862, type: 3}
+--- !u!114 &1763822351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1763822344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ff1a49ed6bb4ec694f7c8bfbcfee68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goToEndCanvas: {fileID: 2800000, guid: 34acb949e90dd4b4ca583cbc394febe7, type: 3}
+  xPos: 0
+  yPos: 0
+  width: 0
+  height: 0
 --- !u!1001 &1938467261
 Prefab:
   m_ObjectHideFlags: 0
