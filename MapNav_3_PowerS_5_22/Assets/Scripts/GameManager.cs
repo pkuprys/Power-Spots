@@ -24,9 +24,11 @@ public class GameManager : Singleton<GameManager> {
         while(!save.IsCompleted) yield return null;
         if(save.IsFaulted || save.IsCanceled){
             pendingChallenge = null;
+            print("PROBLEMS");
             //TODO display an error OR "disable" the spot
         }
         else{
+            print("LOADING");
             Application.LoadLevel(spot.Challenge);;
         }
     }

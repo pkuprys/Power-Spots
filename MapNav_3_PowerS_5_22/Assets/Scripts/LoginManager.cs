@@ -10,7 +10,7 @@ public class LoginManager : Singleton<LoginManager> {
     //BUTTON CONFIGURATIONS
     private static float X_ANCHOR = -6.0f;
     private static float Y_ANCHOR = 4.0f;
-    private static float Z_ANCHOR = 1.0f;
+    private static float Z_ANCHOR = -2.0f;
     private static float X_ROW_DIFF = 2.0f;
     private static float Y_COL_DIFF = -1.5f;
     private static float X_OFFSET = X_ROW_DIFF/2;
