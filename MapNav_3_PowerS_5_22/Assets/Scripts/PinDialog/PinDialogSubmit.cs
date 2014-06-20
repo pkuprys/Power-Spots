@@ -5,14 +5,20 @@ public class PinDialogSubmit : MonoBehaviour {
     private static string BAD_PIN = "Incorrect PIN. Please try again.";
     private static string ERROR = "Error. Please try again.";
 
-    private string message = "";
-    public string enteredPin = "";
+    GUIText pinResponse;
 
-	void Start () {}
+	void Start () {
+        GameObject go = new GameObject("PinResponse");
+        go.transform.position = new Vector3(0.5f, 0.25f, 0f);
+        go.transform.parent = transform.parent;
+        pinResponse = (GUIText) go.AddComponent(typeof(GUIText));
+        pinResponse.fontSize = 16;
+    }
 	void Update () {}
 
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0)){
+            string enteredPin = transform.parent.gameObject.GetComponent<PinDialog>().StringToEdit;
             Team team = LoginManager.Instance.GetSelectedTeam();
             bool authenticated = team.SignIn(enteredPin);
             if(authenticated){
@@ -23,15 +29,12 @@ public class PinDialogSubmit : MonoBehaviour {
                     Destroy(this.transform.parent.gameObject);
                 }
                 else{
-                    //TODO display this
-                    message = ERROR;
+                    pinResponse.text = ERROR;
                 }
             }
             else{
-                //TODO display this
-                message = BAD_PIN;
+                pinResponse.text = BAD_PIN;
             }
-            print(message);
         }
     }
 }

@@ -2,13 +2,13 @@
 using System.Collections;
 
 public class PinDialog : MonoBehaviour {
-    public string StringToEdit = "0000";
+    public string StringToEdit = "";
     public GUIStyle inputTextStyle;
 
     void Start(){}
     void Update(){}
 
     public void OnGUI(){
-        StringToEdit = GUI.TextField(new Rect(transform.position.x, transform.position.y, 102, 30), StringToEdit, 4);
+        StringToEdit = GUI.TextField(new Rect(Screen.width/2, Screen.height/2, 50, 30), StringToEdit, 4);
     }
 }

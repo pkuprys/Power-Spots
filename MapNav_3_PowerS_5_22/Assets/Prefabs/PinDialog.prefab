@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 64: {fileID: 6400000}
   - 23: {fileID: 2300000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Submit
   m_TagString: Untagged
@@ -85,8 +86,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.122039318, y: 1.70858002, z: -10}
-  m_LocalScale: {x: 1.40944016, y: .981105208, z: 1.40944016}
+  m_LocalPosition: {x: -.122039318, y: 1.70858002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
   - {fileID: 400002}
@@ -214,6 +215,17 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dac789ff9cc4489aaa5ef95ab07251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9be5ab82b4704629aa5929a1ca4a3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StringToEdit: 0000
+  StringToEdit: 
   inputTextStyle:
     m_Name: 
     m_Normal:
@@ -296,8 +308,6 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  width: 0
-  height: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

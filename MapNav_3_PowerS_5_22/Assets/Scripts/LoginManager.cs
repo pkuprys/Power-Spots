@@ -127,19 +127,13 @@ public class LoginManager : Singleton<LoginManager> {
     }
 
 	public void UpdateSelection(TeamButton newSelection){
-		if(newSelection == null){
-			return;
-		}
 		if(currentSelection != null){
             SetStatus(currentSelection.Id, AVAILABLE);
 		}
-		if(currentSelection == newSelection){
-            //unselecting
-			currentSelection = null;
-			return;
-		}
 		currentSelection = newSelection;
-        SetStatus(currentSelection.Id, SELECTED);
+        if(currentSelection != null){
+            SetStatus(currentSelection.Id, SELECTED);
+        }
 	}
     
     private void SetStatus(string id, string status){

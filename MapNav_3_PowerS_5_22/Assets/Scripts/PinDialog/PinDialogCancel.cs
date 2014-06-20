@@ -7,6 +7,7 @@ public class PinDialogCancel : MonoBehaviour {
 
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0)){
+            LoginManager.Instance.UpdateSelection(null);
             LoginManager.Instance.Gui(true);
             Destroy(this.transform.parent.gameObject);
         }
