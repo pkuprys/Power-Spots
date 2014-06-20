@@ -687,7 +687,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2a6b8473af38c482f882a8dd67933107, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.51699972
+      value: -5.00843239
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2a6b8473af38c482f882a8dd67933107, type: 2}
       propertyPath: m_LocalPosition.y
@@ -803,7 +803,7 @@ GameObject:
   - 23: {fileID: 1666995538}
   - 102: {fileID: 1666995537}
   m_Layer: 0
-  m_Name: BackToMapText
+  m_Name: BackToMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,8 +816,8 @@ Transform:
   m_PrefabInternal: {fileID: 1281120500}
   m_GameObject: {fileID: 1666995535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.349181265, y: .15274173, z: .428508759}
-  m_LocalScale: {x: .0544197857, y: .138525084, z: 1}
+  m_LocalPosition: {x: -.00208492088, y: .0121708335, z: .243606284}
+  m_LocalScale: {x: .048410058, y: .12322738, z: .088956736}
   m_Children: []
   m_Father: {fileID: 2067871192}
   m_RootOrder: 0
@@ -829,20 +829,20 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 1281120500}
   m_GameObject: {fileID: 1666995535}
-  m_Text: Back To Map
+  m_Text: Back to Map
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
-  m_Anchor: 0
+  m_Anchor: 4
   m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 17
+  m_TabSize: 0
+  m_FontSize: 32
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 4c7297257501df642a5825bbf410b35f, type: 3}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4279176975
+    rgba: 4294967295
 --- !u!23 &1666995538
 Renderer:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4c7297257501df642a5825bbf410b35f, type: 3}
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1085,8 +1085,8 @@ Transform:
   m_PrefabInternal: {fileID: 1281120500}
   m_GameObject: {fileID: 2067871187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51699972, y: 4.89608002, z: -.783284187}
-  m_LocalScale: {x: 1.83756709, y: .721890926, z: 1}
+  m_LocalPosition: {x: -5.00843239, y: 4.89608002, z: -.783284187}
+  m_LocalScale: {x: 2.0656867, y: .81150794, z: 1.12414205}
   m_Children:
   - {fileID: 1666995536}
   m_Father: {fileID: 0}
