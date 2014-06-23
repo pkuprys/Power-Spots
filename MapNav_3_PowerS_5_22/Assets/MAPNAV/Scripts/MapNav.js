@@ -479,8 +479,82 @@ function MapPosition(){
 	// 	url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:water%7Celement:geometry%7Ccolor:0x193341&style=feature:landscape%7Celement:geometry%7Ccolor:0x2c5a71&style=feature:road%7Celement:geometry%7Ccolor:0x29768a%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x406d80&style=feature:transit%7Celement:geometry%7Ccolor:0x406d80%7Celement:labels.text.stroke%7Cvisibility:on%7Ccolor:0x3e606f%7Cweight:2%7Cgamma:0.84%7Celement:labels.text.fill%7Ccolor:ffffff&style=feature:administrative%7Celement:geometry%7Ccolor:0x1a3541%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x2c5a71";
 	
 	//map without street names or landmark markers
-	url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x193341&style=feature:landscape%7Celement:geometry%7Ccolor:0x2c5a71&style=feature:road%7Celement:geometry%7Ccolor:0x29768a%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x406d80&style=feature:administrative%7Celement:geometry%7Ccolor:0x1a3541%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x2c5a71";
-	
+		url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x193341&style=feature:landscape%7Celement:geometry%7Ccolor:0x2c5a71&style=feature:road%7Celement:geometry%7Ccolor:0x29768a%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x406d80&style=feature:administrative%7Celement:geometry%7Ccolor:0x1a3541%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x2c5a71";
+
+
+	/*[
+    {
+        "stylers": [
+            {
+                "hue": "#ff1a00"
+            },
+            {
+                "invert_lightness": true
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 33
+            },
+            {
+                "gamma": 0.5
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2D333C"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#eeeeee"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            },
+            {
+                "weight": 3
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#2D333C"
+            }
+        ]
+    }
+]*/
+
 	//=================================================================================================
 
 	//Proceed with download if an Wireless internet connection is available 
