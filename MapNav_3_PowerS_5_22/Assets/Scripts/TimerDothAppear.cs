@@ -13,7 +13,7 @@ public class TimerDothAppear : MonoBehaviour {
 
 	void OnGUI(){
 
-				//Need a switch here that only displays this info if a game designer has flipped a boolean in the database to make the timer appear
+				//We need a switch here that only displays this gui timer info if a game designer has flipped a boolean in the database to make the timer appear
 
 
 				if(miliseconds <= 0){
