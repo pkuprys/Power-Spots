@@ -4,7 +4,11 @@ using System.Collections;
 public class GlowingCircleScript : MonoBehaviour {
 
 	public Texture yellowCircletexture;
+		public Texture blueCircletexture;
+	
 		public TextMesh pressMeText;
+
+		public int numAnswersRequired;
 	
 		void Start(){
 				pressMeText.renderer.enabled = false; 
@@ -14,8 +18,8 @@ public class GlowingCircleScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-				if (PuzzleSubmitButton_2.correctAnswers >= 3) {
-						renderer.material.mainTexture = yellowCircletexture;
+				if (PuzzleSubmitButton_2.correctAnswers >= numAnswersRequired) {
+						renderer.material.mainTexture = blueCircletexture;
 						pressMeText.renderer.enabled = true; 
 				}
 
