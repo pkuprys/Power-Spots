@@ -249,7 +249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405341704}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1001 &102918136
 Prefab:
   m_ObjectHideFlags: 0
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1a05530ed3e4d03a54219e6f0845d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer1: cad
+  answer1: 123456789
   c1: {r: 1, g: 0, b: 0, a: 1}
   c2: {r: 1, g: .921568632, b: .0156862754, a: 1}
   c3: {r: 0, g: 0, b: 1, a: 1}
@@ -774,7 +774,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405341704}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &402586380
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,9 +958,9 @@ Transform:
   m_LocalPosition: {x: .385355383, y: 1.56502545, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 387275055}
   - {fileID: 58026828}
   - {fileID: 1728943604}
+  - {fileID: 387275055}
   m_Father: {fileID: 0}
   m_RootOrder: 11
 --- !u!1 &451835792
@@ -2367,7 +2367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405341704}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1730929954
 GameObject:
   m_ObjectHideFlags: 0

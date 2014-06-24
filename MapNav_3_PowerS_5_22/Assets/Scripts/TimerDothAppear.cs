@@ -32,7 +32,7 @@ public class TimerDothAppear : MonoBehaviour {
 
 				string timerTime = string.Format("{0}:{1}:{2}", minutes, seconds, (int)miliseconds);
 
-				GUI.Label(new Rect(Screen.width-250, 10, 300, 20), "Signal Fade In: \n             " + timerTime, timerGUI);
+				GUI.Label(new Rect(Screen.width-250, 10, 300, 20), "Signal Loss Countdown: \n             " + timerTime, timerGUI);
 	
 	}
 }
