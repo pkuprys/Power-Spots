@@ -479,10 +479,13 @@ function MapPosition(){
 	// 	url= "http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:water%7Celement:geometry%7Ccolor:0x193341&style=feature:landscape%7Celement:geometry%7Ccolor:0x2c5a71&style=feature:road%7Celement:geometry%7Ccolor:0x29768a%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x406d80&style=feature:transit%7Celement:geometry%7Ccolor:0x406d80%7Celement:labels.text.stroke%7Cvisibility:on%7Ccolor:0x3e606f%7Cweight:2%7Cgamma:0.84%7Celement:labels.text.fill%7Ccolor:ffffff&style=feature:administrative%7Celement:geometry%7Ccolor:0x1a3541%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x2c5a71";
 	
 	//map without street names or landmark markers
-		url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x193341&style=feature:landscape%7Celement:geometry%7Ccolor:0x2c5a71&style=feature:road%7Celement:geometry%7Ccolor:0x29768a%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x406d80&style=feature:administrative%7Celement:geometry%7Ccolor:0x1a3541%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x2c5a71";
+		//url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x193341&style=feature:landscape%7Celement:geometry%7Ccolor:0x2c5a71&style=feature:road%7Celement:geometry%7Ccolor:0x29768a%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x406d80&style=feature:administrative%7Celement:geometry%7Ccolor:0x1a3541%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x2c5a71";
+
+	//map from snazzyMaps called Roadtrip at Night
+		url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x164b74&style=feature:landscape%7Celement:geometry%7Ccolor:0x02071d&style=feature:road%7Celement:geometry%7Ccolor:0xbbbbbb%7Cvisibility:simplified%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x000000&style=feature:administrative%7Celement:geometry%7Ccolor:0x3a2f04%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x3a2f04";
 
 
-	/*[
+/*[
     {
         "stylers": [
             {
