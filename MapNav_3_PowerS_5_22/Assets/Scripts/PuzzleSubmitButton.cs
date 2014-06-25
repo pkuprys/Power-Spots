@@ -33,7 +33,13 @@ public class PuzzleSubmitButton : MonoBehaviour {
 
 		private bool doneGibberish = true;
 
-    void Start () {}
+	public static bool puzzleSolvEd;
+
+		void OnAwake () {
+
+				puzzleSolvEd = false;
+
+		}
     void Update () {
 
 				updates++;
@@ -82,6 +88,7 @@ public class PuzzleSubmitButton : MonoBehaviour {
 						lineQuad.renderer.material.mainTexture = blueLineTexture;
 						circleQuad.renderer.material.mainTexture = blueCircleTexture;
 						pressMeText.renderer.enabled = true; 
+						puzzleSolvEd = true;
 				}
 				startGibberish = !startGibberish;
 				triggeredRandomText = false;

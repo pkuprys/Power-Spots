@@ -17,8 +17,9 @@ public class GlowingCircleScript : MonoBehaviour {
 
 		void OnMouseDown(){
 
-				GameManager.Instance.EndChallenge(true);
-				Application.LoadLevel("PS_MainMapScene");
-
+				if(PuzzleSubmitButton.puzzleSolvEd){
+					GameManager.Instance.EndChallenge(true);
+					Application.LoadLevel("PS_MainMapScene");
+				}
 		}
 }
