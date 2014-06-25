@@ -15,16 +15,6 @@ public class GlowingCircleScript : MonoBehaviour {
 
 		}
 
-	// Update is called once per frame
-	void Update () {
-	
-				if (PuzzleSubmitButton_2.correctAnswers >= numAnswersRequired) {
-						renderer.material.mainTexture = blueCircletexture;
-						pressMeText.renderer.enabled = true; 
-				}
-
-	}
-
 		void OnMouseDown(){
 
 				GameManager.Instance.EndChallenge(true);
