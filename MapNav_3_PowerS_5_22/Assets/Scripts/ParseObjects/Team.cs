@@ -33,11 +33,15 @@ public class Team : ParseObject
         set { SetProperty<bool>(value, "IsSignedIn"); }
     }
 
-    [ParseFieldName("isTextSnippetVisible")]
-    public bool IsTextSnippetVisible
+    [ParseFieldName("tokenCount")]
+    public int TokenCount
     {
-        get { return GetProperty<bool>("IsTextSnippetVisible"); }
-        set { SetProperty<bool>(value, "IsTextSnippetVisible"); }
+        get { return GetProperty<int>("TokenCount"); }
+        set { SetProperty<int>(value, "TokenCount"); }
+    }
+
+    public bool IsTextSnippetVisible(){
+        return TokenCount >= 3;
     }
 
     public bool SignIn(string enteredPin){
