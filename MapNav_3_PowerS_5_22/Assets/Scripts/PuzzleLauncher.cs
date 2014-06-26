@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PuzzleLauncher : MonoBehaviour {
-		private static string BODY_TEXT = "Lorem ipsum dolor sit amet, consectetur aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+	private static string BODY_TEXT = "Lorem ipsum dolor sit amet, consectetur aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
     private static string POINTER = "3D_Pointer";
     private GameObject redCircle;
     private bool isActive = false;
@@ -10,13 +10,14 @@ public class PuzzleLauncher : MonoBehaviour {
     private GameObject imageQuad;
     private GUIText titleText;
     private GUIText bodyText;
-		private int previewBodyMaxWidth = 220;
-		private int previewBodyMaxHeight = 150;
+	private int previewBodyMaxWidth = 220;
+	private int previewBodyMaxHeight = 150;
 
     public GameObject spotPreview;
+    public SpotsManager spotsManager;
 
-		private float previewScreenX = 3.5f;
-		private float previewScreenY = 3.5f;
+	private float previewScreenX = 3.5f;
+	private float previewScreenY = 3.5f;
 
     void Start () {
         redCircle = GameObject.Find(this.gameObject.name + "_red_circle");
@@ -102,7 +103,10 @@ public class PuzzleLauncher : MonoBehaviour {
 
     private void ToggleAnimation(Collider collider, bool turnOn){
         if(POINTER.Equals(collider.gameObject.name)){
-            isActive = turnOn;
+            Spot spot = spotsManager.GetSpot(gameObject.name);
+            Team owner = spot == null ? null : spot.Owner;
+            bool canChallenge = owner == null || !owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId);
+            isActive = turnOn && canChallenge;
             redCircle.SetActive(turnOn);
         }
     }

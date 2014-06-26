@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!114 &14602263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,6 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!1 &289747720
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!114 &493251514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,6 +1136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!1 &581554439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,6 +1761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!114 &849497293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1891,6 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!114 &893729904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2247,6 +2253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!1 &1023152417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,6 +2455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!1 &1132333510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,6 +3058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!1001 &1340040435
 Prefab:
   m_ObjectHideFlags: 0
@@ -3279,6 +3288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!1 &1394335676
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,6 +3666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!114 &1606460794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4643,6 +4654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPreview: {fileID: 1484184309}
+  spotsManager: {fileID: 806886744}
 --- !u!1 &2139808423
 GameObject:
   m_ObjectHideFlags: 0
