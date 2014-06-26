@@ -28,6 +28,46 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PS_Regenstein_Puzzle1.unity
   - enabled: 1
+    path: Assets/Scenes/NGUI_Practice.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Bartlett_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Bartlett_Puzzle2.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Bond_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Bond_Puzzle2.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Bond_Puzzle3.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_BotanyPond_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_CenterOfQuad_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_EndCanvasArea_Scene.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Harper_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_LoginScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_MainMapScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_OrientalInstitute_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Regenstein_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Rockefeller_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Ryerson_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_TheHutch_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/PS_Theological_Puzzle1.unity
+  - enabled: 1
+    path: Assets/Scenes/TempPuzzle.unity
+  - enabled: 1
     path: Assets/Scenes/PS_Theological_Puzzle1.unity
   - enabled: 1
     path: Assets/Scenes/PS_TheHutch_Puzzle1.unity

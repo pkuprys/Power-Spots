@@ -20,7 +20,7 @@ public class GoToEndCanvasBTN : MonoBehaviour {
 		}
 
 
-		if (GUI.Button (new Rect (Screen.width - 200, Screen.height - 50, 40, 40), goToEndCanvas)) {
+				if (GUI.Button (new Rect (30, Screen.height - 50, 40, 40), goToEndCanvas)) {
 
 			Application.LoadLevel ("PS_EndCanvasArea_Scene");
 		}

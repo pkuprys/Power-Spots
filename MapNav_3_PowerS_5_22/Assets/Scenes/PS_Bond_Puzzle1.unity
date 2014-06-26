@@ -1023,7 +1023,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1839581129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -1663,6 +1663,7 @@ MonoBehaviour:
   blueLineTexture: {fileID: 2800000, guid: cbd3b440302a848b59469e4f02c1d5b5, type: 3}
   blueCircleTexture: {fileID: 2800000, guid: da6183117c9f048a496c45997c2e9cf9, type: 3}
   pressMeText: {fileID: 795184687}
+  gibberishTextOBJ: {fileID: 0}
 --- !u!23 &2115547393
 Renderer:
   m_ObjectHideFlags: 0
