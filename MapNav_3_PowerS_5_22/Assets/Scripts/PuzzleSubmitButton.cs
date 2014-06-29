@@ -70,13 +70,10 @@ public class PuzzleSubmitButton : MonoBehaviour {
 
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0)){
-
-						//StartCoroutine ("gibberishOutput");
-						startGibberish = true; 
-
-								//GameManager.Instance.EndChallenge(true);
-								//Application.LoadLevel("PS_MainMapScene");
-
+			//StartCoroutine ("gibberishOutput");
+			startGibberish = true; 
+            StartCoroutine(GameManager.Instance.EndChallenge(true));
+			Application.LoadLevel("PS_MainMapScene");
         }
     }
 

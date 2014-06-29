@@ -79,7 +79,7 @@ public class SpotsManager : MonoBehaviour {
         string coloredSpotName = "Spots/" + owner.Color + SPOT;
         Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
         mapSpot.renderer.material.mainTexture = texture;
-        if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId) && GameManager.Instance.HasSpot(mapSpot.gameObject.name)){
+        if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId) && GameManager.Instance.HasToken(mapSpot.gameObject.name)){
             Instantiate(Token, mapSpot.transform.position + new Vector3(0f,0f,0.75f), Quaternion.identity);
         }
     }
