@@ -10,13 +10,15 @@ public class GameManager : Singleton<GameManager> {
     private DateTime? lastUpdatedTime;
     private Challenge pendingChallenge;
     private SpotsManager spotsManager;
-	
+    private string spotNameThatShouldHaveToken;
+
     protected GameManager(){}
 		
 	void Start () {}
     void Update () {}
 
     public IEnumerator Challenge(string spotName){
+        spotNameThatShouldHaveToken = null;
         Spot spot = GetSpotsManager().GetSpot(spotName);
         Team team = LoginManager.Instance.GetSelectedTeam();
         pendingChallenge = new Challenge(team, spot);
@@ -38,6 +40,9 @@ public class GameManager : Singleton<GameManager> {
             return;
         }
         else{
+            if(success){
+                spotNameThatShouldHaveToken = pendingChallenge.Spot.Name;
+            }
             pendingChallenge.Success = success;
             pendingChallenge.SaveAsync();
         }
@@ -49,5 +54,9 @@ public class GameManager : Singleton<GameManager> {
             spotsManager = spotsManagerObject.GetComponent<SpotsManager>();
         }
         return spotsManager;
+    }
+
+    public bool HasSpot(string spotName){
+        return spotName != null && spotName.Equals(spotNameThatShouldHaveToken);
     }
 }

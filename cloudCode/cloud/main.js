@@ -18,7 +18,7 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
   		}
   		spot.fetch({
   			success: function(spot) {
-    			if(spot.get("owner").id === team.id){
+    			if(spot.get("owner") && spot.get("owner").id === team.id){
     				console.log("Team already owns this spot");
     				response.error("Your team has already claimed this Spot once.");
     			}

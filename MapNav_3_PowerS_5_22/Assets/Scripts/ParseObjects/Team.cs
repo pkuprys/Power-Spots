@@ -41,7 +41,7 @@ public class Team : ParseObject
     }
 
     public bool IsTextSnippetVisible(){
-        return TokenCount >= 3;
+        return TokenCount != null && TokenCount >= 3;
     }
 
     public bool SignIn(string enteredPin){
