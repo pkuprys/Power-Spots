@@ -4,20 +4,21 @@ using System.Collections;
 public class PuzzleLauncher : MonoBehaviour {
 	private static string BODY_TEXT = "Lorem ipsum dolor sit amet, consectetur aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
     private static string POINTER = "3D_Pointer";
+    private static float previewScreenX = 0f;
+    private static float previewScreenY = 1f;
+    private static float previewScreenZ = 0f;
+
     private GameObject redCircle;
     private bool isActive = false;
     private SimplePuzzleLauncher simplePuzzleLauncher = null;
     private GameObject imageQuad;
     private GUIText titleText;
     private GUIText bodyText;
-	private int previewBodyMaxWidth = 220;
-	private int previewBodyMaxHeight = 150;
+	private int previewBodyMaxWidth = 440;
+	private int previewBodyMaxHeight = 300;
 
     public GameObject spotPreview;
     public SpotsManager spotsManager;
-
-	private float previewScreenX = 3.5f;
-	private float previewScreenY = 3.5f;
 
     void Start () {
         redCircle = GameObject.Find(this.gameObject.name + "_red_circle");
@@ -31,7 +32,7 @@ public class PuzzleLauncher : MonoBehaviour {
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0)){
             spotPreview.SetActive(true);
-						spotPreview.transform.position = new Vector3(previewScreenX, previewScreenY, 1);
+            spotPreview.transform.position = new Vector3(previewScreenX, previewScreenY, previewScreenZ);
             SetTitleText();
             SetBodyText(BODY_TEXT);
             SetStartChallengeButton();
