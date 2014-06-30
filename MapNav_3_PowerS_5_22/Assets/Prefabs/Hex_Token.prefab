@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
+  - 64: {fileID: 6400000}
   m_Layer: 0
   m_Name: Hex_Token
   m_TagString: Untagged
@@ -58,6 +59,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300000, guid: 4f9dc8a8b1e1a43f5a862e8e333333ea, type: 3}
+--- !u!64 &6400000
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 4f9dc8a8b1e1a43f5a862e8e333333ea, type: 3}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -83,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fc13919b69845469381ff80181781c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poof: {fileID: 400000, guid: f94ff829fe12f4e7796873e06bc5f0ae, type: 2}
+  teamColorParticleTexture: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

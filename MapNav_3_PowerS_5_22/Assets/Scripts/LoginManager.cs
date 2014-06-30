@@ -8,11 +8,11 @@ using UnityEngine;
 
 public class LoginManager : Singleton<LoginManager> {
     //BUTTON CONFIGURATIONS
-    private static float X_ANCHOR = -6.0f;
-    private static float Y_ANCHOR = 4.0f;
+	private static float X_ANCHOR = -5.0f;
+	private static float Y_ANCHOR = 3.0f;
     private static float Z_ANCHOR = -2.0f;
-    private static float X_ROW_DIFF = 2.0f;
-    private static float Y_COL_DIFF = -1.5f;
+	private static float X_ROW_DIFF = 2.5f;
+	private static float Y_COL_DIFF = -2.5f;
     private static float X_OFFSET = X_ROW_DIFF/2;
     private static int BUTTONS_PER_ROW = 4;
     //BUTTON NAME PIECES
@@ -52,7 +52,7 @@ public class LoginManager : Singleton<LoginManager> {
 
     private IEnumerator InitButtons(){
         GameObject go = new GameObject("StatusOfTeams");
-        go.transform.position = new Vector3(0.65f, 0.75f, 0);
+		go.transform.position = new Vector3(0.29f, 0.18f, 0);
         statusOfTeams = (GUIText) go.AddComponent(typeof(GUIText));
         statusOfTeams.text = GetStatusOfTeamsText();
         statusOfTeams.fontSize = 16;

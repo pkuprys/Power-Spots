@@ -76,7 +76,7 @@ public class SpotsManager : MonoBehaviour {
     }
 
     public void updateOwner(GameObject mapSpot, Team owner) {
-        string coloredSpotName = "Spots/" + owner.Color + SPOT;
+		string coloredSpotName = "hexSpots/" + owner.Color + "_MapSpot";
         Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
         mapSpot.renderer.material.mainTexture = texture;
         if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId) && GameManager.Instance.HasToken(mapSpot.gameObject.name)){
