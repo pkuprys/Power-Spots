@@ -3,13 +3,12 @@ using System.Collections;
 
 public class Tap_Token_Disappear : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+		//public part
+
+		void OnMouseDown(){
+
+
+
+		}
 }
