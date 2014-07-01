@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 81804307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .400590897, y: -2.4281702, z: -3.06125927}
+  m_LocalPosition: {x: .400590897, y: -2.27327442, z: -3.06125927}
   m_LocalScale: {x: 9.69120121, y: 7.37283945, z: 1.80176973}
   m_Children: []
   m_Father: {fileID: 691958927}
@@ -110,13 +110,13 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 81804307}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 414a439421baf4f87ac0ed674cbfdb09, type: 2}
+  - {fileID: 2100000, guid: b8512e26e32354a63b94592b6e3b5a02, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -457,7 +457,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 81804308}
-  - {fileID: 1967829577}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &733452005
@@ -1346,11 +1345,11 @@ Prefab:
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: blueLineTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 537f4df7775104bc882f83e8da94e786, type: 3}
+      objectReference: {fileID: 2800000, guid: 7558d92eb55ba42e1a43171ea22b5f90, type: 3}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: redLineTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 73a38c93128604a81a9a0512f7cba88d, type: 3}
+      objectReference: {fileID: 2800000, guid: 09cd1dffb312c4b6b8172d81d28e75d2, type: 3}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: blueCircleTexture
       value: 
@@ -1557,76 +1556,6 @@ Transform:
   - {fileID: 1573741121}
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &1967829576
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1967829577}
-  - 33: {fileID: 1967829580}
-  - 64: {fileID: 1967829579}
-  - 23: {fileID: 1967829578}
-  m_Layer: 0
-  m_Name: BLUELINE
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1967829577
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967829576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .400590897, y: -2.4281702, z: -3.60760069}
-  m_LocalScale: {x: 9.65267181, y: 7.34352684, z: 1.79460597}
-  m_Children: []
-  m_Father: {fileID: 691958927}
-  m_RootOrder: 1
---- !u!23 &1967829578
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967829576}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: ad4c926b657f7496bb17800e95525f31, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!64 &1967829579
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967829576}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &1967829580
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967829576}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &2046162833
 Prefab:
   m_ObjectHideFlags: 0
@@ -1795,8 +1724,8 @@ MonoBehaviour:
   jibberishOBJ: {fileID: 520037435}
   lineQuad: {fileID: 81804307}
   circleQuad: {fileID: 733452005}
-  redLineTexture: {fileID: 2800000, guid: 73a38c93128604a81a9a0512f7cba88d, type: 3}
-  blueLineTexture: {fileID: 2800000, guid: 537f4df7775104bc882f83e8da94e786, type: 3}
+  redLineTexture: {fileID: 2800000, guid: 09cd1dffb312c4b6b8172d81d28e75d2, type: 3}
+  blueLineTexture: {fileID: 2800000, guid: 7558d92eb55ba42e1a43171ea22b5f90, type: 3}
   blueCircleTexture: {fileID: 2800000, guid: da6183117c9f048a496c45997c2e9cf9, type: 3}
   pressMeText: {fileID: 836907672}
   gibberishTextOBJ: {fileID: 520037435}

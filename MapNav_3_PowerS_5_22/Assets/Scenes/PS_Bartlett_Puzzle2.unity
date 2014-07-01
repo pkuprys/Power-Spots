@@ -357,7 +357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: answer
-      value: basketball
+      value: saviors
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: jibberishOBJ
@@ -370,11 +370,11 @@ Prefab:
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: blueLineTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 537f4df7775104bc882f83e8da94e786, type: 3}
+      objectReference: {fileID: 2800000, guid: 20896b844ac98448d864c94929e1479c, type: 3}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: redLineTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 73a38c93128604a81a9a0512f7cba88d, type: 3}
+      objectReference: {fileID: 2800000, guid: c3cce06ff1c484760b10bdee33365c4d, type: 3}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: blueCircleTexture
       value: 
@@ -800,7 +800,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 921299784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -965,12 +965,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420c7198899df4c9e8e05cbd5fae546e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: basketball
+  answer: saviors
   jibberishOBJ: {fileID: 1963127089}
   lineQuad: {fileID: 1781335078}
   circleQuad: {fileID: 824226797}
-  redLineTexture: {fileID: 2800000, guid: 73a38c93128604a81a9a0512f7cba88d, type: 3}
-  blueLineTexture: {fileID: 2800000, guid: 537f4df7775104bc882f83e8da94e786, type: 3}
+  redLineTexture: {fileID: 2800000, guid: c3cce06ff1c484760b10bdee33365c4d, type: 3}
+  blueLineTexture: {fileID: 2800000, guid: 20896b844ac98448d864c94929e1479c, type: 3}
   blueCircleTexture: {fileID: 2800000, guid: da6183117c9f048a496c45997c2e9cf9, type: 3}
   pressMeText: {fileID: 1417680853}
   gibberishTextOBJ: {fileID: 1963127089}
@@ -1476,7 +1476,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 414a439421baf4f87ac0ed674cbfdb09, type: 2}
+  - {fileID: 2100000, guid: c1108e2c62a484748a2a2f8ae930dd72, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

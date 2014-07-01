@@ -13,8 +13,6 @@ public class PuzzleSubmitButton : MonoBehaviour {
 		public TextMesh pressMeText;
 		public TextMesh gibberishTextOBJ;
 
-		//don't need to specify that it's false on declaration. When unspecified system sets int and float to 0, and bool to false. 
-
 		bool triggeredRandomText = false;
 		bool removeLetterOne = false;
 		bool triggeredTimer = false;
@@ -72,8 +70,8 @@ public class PuzzleSubmitButton : MonoBehaviour {
         if(Input.GetMouseButtonDown(0)){
 			//StartCoroutine ("gibberishOutput");
 			startGibberish = true; 
-            StartCoroutine(GameManager.Instance.EndChallenge(true));
-			Application.LoadLevel("PS_MainMapScene");
+			//StartCoroutine(GameManager.Instance.EndChallenge(true));
+			//Application.LoadLevel("PS_MainMapScene");
         }
     }
 
