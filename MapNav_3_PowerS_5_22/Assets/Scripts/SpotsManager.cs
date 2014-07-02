@@ -11,10 +11,13 @@ public class SpotsManager : MonoBehaviour {
     private Dictionary<string, GameObject> mapSpots = new Dictionary<string, GameObject>(GameConstants.SPOT_COUNT);
     private Dictionary<string, Spot> spots = new Dictionary<string, Spot>(GameConstants.SPOT_COUNT);
     private DateTime? lastUpdatedTime;
+    private Tray_Side traySide;
 
     public GameObject Token;
 
+
 	void Start () {
+        traySide = GameObject.Find("Main Camera").GetComponent<Tray_Side>();
         StartCoroutine("RenderSpots");
 	}
 	void Update () {}
@@ -72,6 +75,10 @@ public class SpotsManager : MonoBehaviour {
                 while(!fetchTask.IsCompleted) yield return null;
                 updateOwner(mapSpot, owner);
             }
+            Team team = LoginManager.Instance.GetSelectedTeam();
+            var fetch = team.FetchAsync();
+            while(!fetch.IsCompleted) yield return null;
+            traySide.ShowTimeline = team.IsTextSnippetVisible();
         }
     }
 

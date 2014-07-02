@@ -32,6 +32,7 @@ public class PuzzleLauncher : MonoBehaviour {
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0)){
             spotPreview.SetActive(true);
+            //TODO recalculate the screen coordinates
             spotPreview.transform.position = new Vector3(previewScreenX, previewScreenY, previewScreenZ);
             SetTitleText();
             SetBodyText(BODY_TEXT);

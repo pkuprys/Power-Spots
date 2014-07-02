@@ -10,8 +10,7 @@ public class GameManager : Singleton<GameManager> {
     private Challenge pendingChallenge;
     private SpotsManager spotsManager;
     private string spotNameThatShouldHaveToken;
-    private Tray_Side traySideCallback;
-
+    
     protected GameManager(){}
 		
 	void Start () {}
@@ -34,9 +33,9 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
-    public IEnumerator EndChallenge(bool success){
+    public void EndChallenge(bool success){
         if(pendingChallenge == null){
-            return false;
+            return;
         }
         else{
             if(success){
@@ -44,11 +43,6 @@ public class GameManager : Singleton<GameManager> {
             }
             pendingChallenge.Success = success;
             pendingChallenge.SaveAsync();
-            Team team = LoginManager.Instance.GetSelectedTeam();
-            var fetch = team.FetchAsync();
-            while(!fetch.IsCompleted) yield return null;
-            //TODO put this logic elsewhere
-            traySideCallback.ShowTimeline = team.IsTextSnippetVisible();
         }
     }
 
@@ -62,9 +56,5 @@ public class GameManager : Singleton<GameManager> {
 
     public bool HasToken(string spotName){
         return spotName != null && spotName.Equals(spotNameThatShouldHaveToken);
-    }
-
-    public void RegisterTimelineCallback(Tray_Side traySide){
-        traySideCallback = traySide;
     }
 }

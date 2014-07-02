@@ -13,11 +13,9 @@ public class Tap_Token_Disappear : MonoBehaviour {
 	void Start(){
 		Team team = LoginManager.Instance.GetSelectedTeam();
 		teamColorParticleTexture = Resources.Load("hexSpots/" + team.Color + COLOR_SUFFIX, typeof(Texture)) as Texture;
-
 	}
 
 		void OnMouseDown(){
-			
 			print ("We have clicked the prefab.");
 			poof.renderer.material.mainTexture = teamColorParticleTexture;
 			renderer.material.shader = Shader.Find("Unlit/Transparent");
