@@ -4,9 +4,7 @@ using System.Collections;
 public class PuzzleLauncher : MonoBehaviour {
 	private static string BODY_TEXT = "Lorem ipsum dolor sit amet, consectetur aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
     private static string POINTER = "3D_Pointer";
-    private static float previewScreenX = 0f;
-    private static float previewScreenY = 1f;
-    private static float previewScreenZ = 0f;
+    private static string PREVIEW_PARENT = "/Main Camera";
 
     private GameObject redCircle;
     private bool isActive = false;
@@ -32,8 +30,6 @@ public class PuzzleLauncher : MonoBehaviour {
     public void OnMouseOver(){
         if(Input.GetMouseButtonDown(0)){
             spotPreview.SetActive(true);
-            //TODO recalculate the screen coordinates
-            spotPreview.transform.position = new Vector3(previewScreenX, previewScreenY, previewScreenZ);
             SetTitleText();
             SetBodyText(BODY_TEXT);
             SetStartChallengeButton();
@@ -83,14 +79,14 @@ public class PuzzleLauncher : MonoBehaviour {
 
     private void SetStartChallengeButton() {
         if(simplePuzzleLauncher == null) {
-            simplePuzzleLauncher = GameObject.Find("/SpotPreview/StartChallengeQuad").GetComponent<SimplePuzzleLauncher>();
+            simplePuzzleLauncher = GameObject.Find(PREVIEW_PARENT + "/SpotPreview/StartChallengeQuad").GetComponent<SimplePuzzleLauncher>();
         }
         simplePuzzleLauncher.SetValues(isActive, gameObject.name);
     }
 
     private void SetPicture() {
         if(imageQuad == null) {
-            imageQuad = GameObject.Find("/SpotPreview/ImageQuad");
+            imageQuad = GameObject.Find(PREVIEW_PARENT + "/SpotPreview/ImageQuad");
         }
         imageQuad.renderer.material.mainTexture = Resources.Load("Previews/" + gameObject.name, typeof(Texture)) as Texture;
     }
