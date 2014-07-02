@@ -54,8 +54,7 @@ public class SpotsManager : MonoBehaviour {
         }
         StartCoroutine("UpdateSpots");
     }
-    //TODO see if the duplicate code in the above and below methods can be reused
-    //the problem is that Parse will return errors if we try to do concurrent reads from the same running app
+
     private IEnumerator UpdateSpots(){
         yield return null;
         while(true){
@@ -79,6 +78,7 @@ public class SpotsManager : MonoBehaviour {
             var fetch = team.FetchAsync();
             while(!fetch.IsCompleted) yield return null;
             traySide.ShowTimeline = team.IsTextSnippetVisible();
+            traySide.TokenCount = team.TokenCount;
         }
     }
 
