@@ -4,4 +4,5 @@
     public static int DISABLED_LAYER = 9;
     public static int ENABLED_LAYER = 0;
     public static int SPOT_COUNT = 11;
+    public static string COLOR_SUFFIX = "_MapSpot";
 }

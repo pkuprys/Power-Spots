@@ -10,6 +10,11 @@ public class Tray_Side : MonoBehaviour {
     public bool ShowTimeline {get; set;}
     public int TokenCount {get; set;}
 
+    void Start(){
+        Team team = LoginManager.Instance.GetSelectedTeam();
+        myTeamToken = Resources.Load("hexSpots/" + team.Color + GameConstants.COLOR_SUFFIX, typeof(Texture)) as Texture;
+    }
+
 	void OnGUI(){
         GUI.DrawTexture(new Rect(Screen.width-220, 10, 200, 100), trayGraphicDIM);
         if(TokenCount > 0){
