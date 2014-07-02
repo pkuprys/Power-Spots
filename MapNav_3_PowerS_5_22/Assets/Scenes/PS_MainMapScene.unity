@@ -917,6 +917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poof: {fileID: 400000, guid: f94ff829fe12f4e7796873e06bc5f0ae, type: 2}
   teamColorParticleTexture: {fileID: 0}
+  spotsManager: {fileID: 806886744}
 --- !u!64 &301260615
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1399,6 +1400,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 02a2add72a3f44436a4a2c44ca880c49, type: 2}
+      propertyPath: spotsManager
+      value: 
+      objectReference: {fileID: 806886744}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02a2add72a3f44436a4a2c44ca880c49, type: 2}
   m_RootGameObject: {fileID: 301260609}

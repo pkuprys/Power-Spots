@@ -13,10 +13,12 @@ public class SpotsManager : MonoBehaviour {
     private DateTime? lastUpdatedTime;
     private Tray_Side traySide;
 
+    public bool UpdateTokens {get; set;}
     public GameObject Token;
 
 
 	void Start () {
+        UpdateTokens = true;
         traySide = GameObject.Find("Main Camera").GetComponent<Tray_Side>();
         StartCoroutine("RenderSpots");
 	}
@@ -77,8 +79,11 @@ public class SpotsManager : MonoBehaviour {
             Team team = LoginManager.Instance.GetSelectedTeam();
             var fetch = team.FetchAsync();
             while(!fetch.IsCompleted) yield return null;
-            traySide.ShowTimeline = team.IsTextSnippetVisible();
-            traySide.TokenCount = team.TokenCount;
+            if(UpdateTokens){
+                traySide.ShowTimeline = team.IsTextSnippetVisible();
+                traySide.TokenCount = team.TokenCount;
+                UpdateTokens = false;
+            }
         }
     }
 
