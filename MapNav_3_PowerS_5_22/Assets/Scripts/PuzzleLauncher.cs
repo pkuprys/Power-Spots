@@ -12,7 +12,7 @@ public class PuzzleLauncher : MonoBehaviour {
     private GameObject imageQuad;
     private GUIText titleText;
     private GUIText bodyText;
-	private int previewBodyMaxWidth = 300;
+	private int previewBodyMaxWidth = 280;
 	private int previewBodyMaxHeight = 300;
 
     public GameObject spotPreview;
