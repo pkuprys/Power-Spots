@@ -10,6 +10,9 @@ public class GameManager : Singleton<GameManager> {
     private Challenge pendingChallenge;
     private SpotsManager spotsManager;
     private string spotNameThatShouldHaveToken;
+    private bool updateTokens = true;
+
+    public int TokenCount {get; set;}
     
     protected GameManager(){}
 		
@@ -56,5 +59,11 @@ public class GameManager : Singleton<GameManager> {
 
     public bool HasToken(string spotName){
         return spotName != null && spotName.Equals(spotNameThatShouldHaveToken);
+    }
+
+    public bool UpdateTokens(){
+        bool returnValue = updateTokens;
+        updateTokens = false;
+        return returnValue;
     }
 }

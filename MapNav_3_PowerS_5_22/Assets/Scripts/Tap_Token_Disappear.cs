@@ -19,8 +19,8 @@ public class Tap_Token_Disappear : MonoBehaviour {
 		poof.renderer.material.mainTexture = teamColorParticleTexture;
 		renderer.material.shader = Shader.Find("Unlit/Transparent");
 		prefabInstance = Instantiate(poof, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity) as Transform;
-		this.renderer.enabled = false;
         spotsManager.UpdateTokens = true;
+        this.renderer.enabled = false;
 		Destroy (this, 2.0f);
 	}
 }

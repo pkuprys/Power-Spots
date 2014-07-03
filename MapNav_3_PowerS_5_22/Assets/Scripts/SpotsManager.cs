@@ -18,8 +18,9 @@ public class SpotsManager : MonoBehaviour {
 
 
 	void Start () {
-        UpdateTokens = true;
+        UpdateTokens = GameManager.Instance.UpdateTokens();
         traySide = GameObject.Find("Main Camera").GetComponent<Tray_Side>();
+        traySide.TokenCount = GameManager.Instance.TokenCount;
         StartCoroutine("RenderSpots");
 	}
 	void Update () {}
@@ -83,6 +84,7 @@ public class SpotsManager : MonoBehaviour {
             if(UpdateTokens){
                 traySide.ShowTimeline = team.IsTextSnippetVisible();
                 traySide.TokenCount = team.TokenCount;
+                GameManager.Instance.TokenCount = team.TokenCount;
                 UpdateTokens = false;
             }
         }
