@@ -65,6 +65,7 @@ public class SpotsManager : MonoBehaviour {
             while(!query.IsCompleted) yield return null;
             IEnumerable<Spot> updatedSpots = query.Result;
             foreach(Spot spot in updatedSpots){
+                spots[spot.Name] = spot;
                 GameObject mapSpot;
                 mapSpots.TryGetValue(spot.Name, out mapSpot);
                 lastUpdatedTime = ParseUtil.GetLatestTime(spot, lastUpdatedTime);

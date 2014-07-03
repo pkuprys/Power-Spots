@@ -34,7 +34,7 @@ public class LoginManager : Singleton<LoginManager> {
     private int readyTeamsCount = 0;
     private bool waitForTeams = true;
     private bool isGuiOn = true;
-    private bool isSignedIn = true; //TODO toggle this to false once dev complete
+    private bool isSignedIn = false;
 	
     protected LoginManager(){}
 		
@@ -169,7 +169,6 @@ public class LoginManager : Singleton<LoginManager> {
     }
 
     public void SignIn(){
-        //TODO save this flag and the team's info in a file on the iPad in case of reboots
         Gui(false);
         isSignedIn = true;
     }

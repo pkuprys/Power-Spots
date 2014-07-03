@@ -80,7 +80,7 @@ public class PuzzleLauncher : MonoBehaviour {
         if(simplePuzzleLauncher == null) {
             simplePuzzleLauncher = GameObject.Find(PREVIEW_PARENT + "/SpotPreview/StartChallengeQuad").GetComponent<SimplePuzzleLauncher>();
         }
-        simplePuzzleLauncher.SetValues(isActive, gameObject.name);
+        simplePuzzleLauncher.SetValues(isActive && CanChallenge(), gameObject.name);
     }
 
     private void SetPicture() {
@@ -100,11 +100,14 @@ public class PuzzleLauncher : MonoBehaviour {
 
     private void ToggleAnimation(Collider collider, bool turnOn){
         if(POINTER.Equals(collider.gameObject.name)){
-            Spot spot = spotsManager.GetSpot(gameObject.name);
-            Team owner = spot == null ? null : spot.Owner;
-            bool canChallenge = owner == null || !owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId);
-            isActive = turnOn && canChallenge;
+            isActive = turnOn && CanChallenge();
             redCircle.SetActive(turnOn);
         }
+    }
+
+    private bool CanChallenge(){
+        Spot spot = spotsManager.GetSpot(gameObject.name);
+        if(spot == null) return false;
+        return spot.Owner == null || !(spot.Owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId));
     }
 }
