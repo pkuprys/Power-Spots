@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class PuzzleLauncher : MonoBehaviour {
-	private static string BODY_TEXT = "Lorem ipsum dolor sit amet, consectetur aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
     private static string POINTER = "3D_Pointer";
     private static string PREVIEW_PARENT = "/Main Camera";
 
@@ -31,7 +30,7 @@ public class PuzzleLauncher : MonoBehaviour {
         if(Input.GetMouseButtonDown(0)){
             spotPreview.SetActive(true);
             SetTitleText();
-            SetBodyText(BODY_TEXT);
+            SetBodyText();
             SetStartChallengeButton();
             SetPicture();
         }
@@ -43,12 +42,12 @@ public class PuzzleLauncher : MonoBehaviour {
         titleText.text = gameObject.name.Replace("_", " ");
     }
 
-    //TODO setup body text that is specific to each spot
-    private void SetBodyText(string text){
+    private void SetBodyText(){
         if(bodyText == null){
             bodyText = spotPreview.transform.Find("PreviewBody").GetComponent<GUIText>();
         }
-        string sizedText = Size(text);
+        TextAsset txt = (TextAsset) Resources.Load("Previews/" + gameObject.name + "_text", typeof(TextAsset));
+        string sizedText = Size(txt.text);
         bodyText.text = sizedText;
     }
 
