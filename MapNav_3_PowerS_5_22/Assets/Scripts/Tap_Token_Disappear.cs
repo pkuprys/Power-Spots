@@ -10,6 +10,8 @@ public class Tap_Token_Disappear : MonoBehaviour {
 	void Start(){
 		Team team = LoginManager.Instance.GetSelectedTeam();
 		teamColorParticleTexture = Resources.Load("hexSpots/" + team.Color + GameConstants.COLOR_SUFFIX, typeof(Texture)) as Texture;
+
+		spotsManager = GameObject.Find ("SpotsManager").GetComponent<SpotsManager> ();
 	}
 
 	void OnMouseDown(){
