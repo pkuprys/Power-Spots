@@ -82,7 +82,7 @@ public class SpotsManager : MonoBehaviour {
             var fetch = team.FetchAsync();
             while(!fetch.IsCompleted) yield return null;
             if(UpdateTokens){
-                traySide.ShowTimeline = team.IsTextSnippetVisible();
+                traySide.ShowTimeline = team.IsTimelineButtonActive();
                 traySide.TokenCount = team.GetTokenCount();
                 GameManager.Instance.TokenCount = team.GetTokenCount();
                 UpdateTokens = false;

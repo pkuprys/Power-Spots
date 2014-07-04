@@ -47,7 +47,15 @@ public class Team : ParseObject
         set { SetProperty<int>(value, "DayTwoTokenCount"); }
     }
 
-    public bool IsTextSnippetVisible(){
+    public bool IsDayOneCardVisible(){
+        return DayOneTokenCount != null && DayOneTokenCount >= 3;
+    }
+
+    public bool IsDayTwoCardVisible(){
+        return DayTwoTokenCount != null && DayTwoTokenCount >= 3;
+    }
+
+    public bool IsTimelineButtonActive(){
         return GetTokenCount() != null && GetTokenCount() >= 3;
     }
 

@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 public class TimelineManager : MonoBehaviour {
-    private static string EVENT_CARD_MODIFIER = "_MODIFIER";
+    private static string REVEAL = "_reveal";
+    private static string ONE = "1";
+    private static string TWO = "2";
+
 	void Start () {
         StartCoroutine("RenderTimeline");
 	}
@@ -17,7 +20,8 @@ public class TimelineManager : MonoBehaviour {
         while(!query.IsCompleted) yield return null;
         IEnumerable<Team> teams = query.Result;
         foreach(Team team in teams){
-            GameObject.Find(team.Name + EVENT_CARD_MODIFIER).SetActive(team.IsTextSnippetVisible());
+            GameObject.Find(team.Name + REVEAL + ONE).SetActive(team.IsDayOneCardVisible());
+            GameObject.Find(team.Name + REVEAL + TWO).SetActive(team.IsDayTwoCardVisible());
         }
     }
 }
