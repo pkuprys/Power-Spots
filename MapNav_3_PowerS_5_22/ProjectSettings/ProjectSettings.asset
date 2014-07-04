@@ -64,7 +64,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.gcc.PSTechBarPads1
+  iPhoneBundleIdentifier: com.gcc.DOTS
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 7c84dae38c4b94f388ee5012313ae318
