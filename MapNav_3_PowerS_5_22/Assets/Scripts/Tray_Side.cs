@@ -30,7 +30,7 @@ public class Tray_Side : MonoBehaviour {
         GUIStyle style = new GUIStyle();
         style.padding = new RectOffset(0,0,0,0);
         if(GUI.Button(new Rect(Screen.width-68, 22, 32, 64), ShowTimeline ? timelineButtonTexture : timelineButtonTextureDisabled, style) && ShowTimeline){
-            //TODO what should happen here?
+            Application.LoadLevel("PS_EndCanvasArea_Scene");
         }
 	}
 }

@@ -20,8 +20,8 @@ public class TimelineManager : MonoBehaviour {
         while(!query.IsCompleted) yield return null;
         IEnumerable<Team> teams = query.Result;
         foreach(Team team in teams){
-            GameObject.Find(team.Name + REVEAL + ONE).SetActive(team.IsDayOneCardVisible());
-            GameObject.Find(team.Name + REVEAL + TWO).SetActive(team.IsDayTwoCardVisible());
+            GameObject.Find(team.Color + REVEAL + ONE).SetActive(team.IsDayOneCardVisible());
+            GameObject.Find(team.Color + REVEAL + TWO).SetActive(team.IsDayTwoCardVisible());
         }
     }
 }

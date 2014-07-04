@@ -40,7 +40,7 @@ public class Team : ParseObject
         set { SetProperty<int>(value, "DayOneTokenCount"); }
     }
 
-    [ParseFieldName("dayTwotokenCount")]
+    [ParseFieldName("dayTwoTokenCount")]
     public int DayTwoTokenCount
     {
         get { return GetProperty<int>("DayTwoTokenCount"); }
