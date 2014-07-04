@@ -9,5 +9,7 @@ public class ExtraParseInitialization : MonoBehaviour
         ParseObject.RegisterSubclass<Team>();
         ParseObject.RegisterSubclass<Spot>();
         ParseObject.RegisterSubclass<Challenge>();
+        ParseObject.RegisterSubclass<GameConfiguration>();
+
     }
 }

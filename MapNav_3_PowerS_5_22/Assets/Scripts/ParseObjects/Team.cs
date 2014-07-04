@@ -33,15 +33,22 @@ public class Team : ParseObject
         set { SetProperty<bool>(value, "IsSignedIn"); }
     }
 
-    [ParseFieldName("tokenCount")]
-    public int TokenCount
+    [ParseFieldName("dayOneTokenCount")]
+    public int DayOneTokenCount
     {
-        get { return GetProperty<int>("TokenCount"); }
-        set { SetProperty<int>(value, "TokenCount"); }
+        get { return GetProperty<int>("DayOneTokenCount"); }
+        set { SetProperty<int>(value, "DayOneTokenCount"); }
+    }
+
+    [ParseFieldName("dayTwotokenCount")]
+    public int DayTwoTokenCount
+    {
+        get { return GetProperty<int>("DayTwoTokenCount"); }
+        set { SetProperty<int>(value, "DayTwoTokenCount"); }
     }
 
     public bool IsTextSnippetVisible(){
-        return TokenCount != null && TokenCount >= 3;
+        return GetTokenCount() != null && GetTokenCount() >= 3;
     }
 
     public bool SignIn(string enteredPin){
@@ -49,5 +56,16 @@ public class Team : ParseObject
             return false;
         }
         return this.PIN.Equals(enteredPin);
+    }
+
+    public int GetTokenCount(){
+        string day = LoginManager.Instance.GetDay();
+        if(GameConstants.DAY_ONE.Equals(day)){
+            return DayOneTokenCount;
+        }
+        else if (GameConstants.DAY_TWO.Equals(day)){
+            return DayTwoTokenCount;
+        }
+        return 0;
     }
 }

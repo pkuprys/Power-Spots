@@ -35,6 +35,8 @@ public class LoginManager : Singleton<LoginManager> {
     private bool waitForTeams = true;
     private bool isGuiOn = true;
     private bool isSignedIn = false;
+    private string day;
+    private bool initialized = false;
 	
     protected LoginManager(){}
 		
@@ -69,10 +71,17 @@ public class LoginManager : Singleton<LoginManager> {
             i++;
             lastUpdatedTime = ParseUtil.GetLatestTime(team, lastUpdatedTime);
         }
+        var configQuery = new ParseQuery<GameConfiguration>().WhereEqualTo("key", GameConstants.DAY).FindAsync();
+        while(!configQuery.IsCompleted) yield return null;
+        IEnumerator<GameConfiguration> enumerator = configQuery.Result.GetEnumerator();
+        enumerator.MoveNext();
+        GameConfiguration config = enumerator.Current;
+        day = config.Value;
+        initialized = true;
     }
     
     private IEnumerator CheckForUpdatesThenStartGame(){
-        yield return null;
+        while(!initialized) yield return null;
         while(waitForTeams){
             yield return new WaitForSeconds(GameConstants.POLL_INTERVAL);
             var query = new ParseQuery<Team>().WhereGreaterThan("updatedAt", lastUpdatedTime).FindAsync();
@@ -175,5 +184,9 @@ public class LoginManager : Singleton<LoginManager> {
 
     public Team GetSelectedTeam(){
         return GetTeam(currentSelection.Id);
+    }
+
+    public string GetDay(){
+        return day;
     }
 }
