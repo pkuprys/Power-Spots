@@ -6,6 +6,21 @@
  * challenge is successfully completed
  */
 Parse.Cloud.beforeSave("Challenge", function(request, response) {
+	//get day
+	var day = "1";
+	var configQuery = new Parse.Query("GameConfiguration");
+	configQuery.equalTo("key", "day");
+	configQuery.find({
+		success: function(results){
+			day = results[0].get("value");
+			console.log("Got day: " + day);
+		},
+		error: function(error) {
+			console.log(error);
+			response.error("An error has occurred, please try again.");
+		}
+	});
+	
 	var success = request.object.get("success");
   	if (typeof(success) == 'undefined' || success == null) {
   		console.log("new challenge attempt"); 		
@@ -53,8 +68,10 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 					console.log("Spot already claimed once.");
 				}
 				else{
-					console.log("Incrementing team token count");
-					team.increment("tokenCount");
+					console.log("Incrementing team token count for day: " + day);
+					var column = day === "1" ? "dayOneTokenCount" : "dayTwoTokenCount";
+					console.log(column);
+					team.increment(column);
 					team.save();
 				}
 			},
@@ -62,7 +79,7 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 				response.error("An error has occurred, please try again.");
 			}
 		});
-
+		
 		//update spot owner
 		spot.fetch({
 			success: function(spot) {
