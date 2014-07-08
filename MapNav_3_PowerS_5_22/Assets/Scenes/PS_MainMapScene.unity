@@ -2305,7 +2305,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 25.4099998
+      scalar: 47
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2517,12 +2517,12 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 2000
+    maxNumParticles: 3170
   ShapeModule:
     serializedVersion: 2
     enabled: 1
     type: 8
-    radius: 8.14000034
+    radius: 21.0200005
     angle: 25
     length: 5
     boxX: 1
@@ -2535,7 +2535,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 2.58999991
+      scalar: 117.900002
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3331,8 +3331,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1111482643}
-  m_LocalRotation: {x: -.464807928, y: -.279627383, z: .35650304, w: .760702133}
-  m_LocalPosition: {x: 15.7057581, y: 1.43183112, z: -1.43977451}
+  m_LocalRotation: {x: -.136240289, y: .866438925, z: -.173519567, w: -.447898567}
+  m_LocalPosition: {x: 12.0695763, y: .470908284, z: 1.67408562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3514,7 +3514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   user: {fileID: 0}
-  simGPS: 0
+  simGPS: 1
   userSpeed: 10
   realSpeed: 1
   fixLat: 41.7901115
@@ -4259,7 +4259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: simGPS
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: m_RootOrder
@@ -4654,7 +4654,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 25.4099998
+      scalar: 40.2799988
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4692,7 +4692,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
+          value: .35135144
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4806,7 +4806,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294967043
       minMaxState: 0
     startSize:
       scalar: .219999999
@@ -4824,7 +4824,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
+          value: .272727281
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4866,7 +4866,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 2000
+    maxNumParticles: 3963
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -4884,7 +4884,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 2.58999991
+      scalar: 3.68000007
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5680,8 +5680,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610599375}
-  m_LocalRotation: {x: -.615803778, y: .430073708, z: -.12812677, w: .647615492}
-  m_LocalPosition: {x: .808710098, y: .820222855, z: .154187918}
+  m_LocalRotation: {x: .526382208, y: .611508191, z: -.445264101, w: -.388226092}
+  m_LocalPosition: {x: 10.3307934, y: 6.13263226, z: 5.2680583}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6175,7 +6175,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1835137209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0621699505, y: .0354677774, z: -.0959989503}
+  m_LocalPosition: {x: .0621699505, y: 1.10924292, z: -.0959989503}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1664391896}
@@ -6189,9 +6189,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: .909803927, g: .137254909, b: .309803933, a: 1}
-  m_Intensity: .5
-  m_Range: 4.09907389
+  m_Color: {r: .147534192, g: .977941155, b: .977941155, a: 1}
+  m_Intensity: 5.61999989
+  m_Range: 9.55452728
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:

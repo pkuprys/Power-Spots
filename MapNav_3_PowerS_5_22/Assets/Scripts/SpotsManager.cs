@@ -12,9 +12,10 @@ public class SpotsManager : MonoBehaviour {
     private Dictionary<string, Spot> spots = new Dictionary<string, Spot>(GameConstants.SPOT_COUNT);
     private DateTime? lastUpdatedTime;
     private Tray_Side traySide;
-
+	//private GameObject token0;
     public bool UpdateTokens {get; set;}
     public GameObject Token;
+
 
 
 	void Start () {
@@ -99,7 +100,8 @@ public class SpotsManager : MonoBehaviour {
         Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
         mapSpot.renderer.material.mainTexture = texture;
         if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId) && GameManager.Instance.HasToken(mapSpot.gameObject.name)){
-            Instantiate(Token, mapSpot.transform.position + new Vector3(0f,0f,0.2f), Quaternion.identity);
+			GameObject token0 = Instantiate(Token, mapSpot.transform.position + new Vector3(0f,0f,0.4f), Quaternion.identity) as GameObject;
+			token0.renderer.material.mainTexture = texture;
         }
     }
 }
