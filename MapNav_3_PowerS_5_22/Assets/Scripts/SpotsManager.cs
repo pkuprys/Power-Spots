@@ -87,6 +87,10 @@ public class SpotsManager : MonoBehaviour {
                 GameManager.Instance.TokenCount = team.GetTokenCount();
                 UpdateTokens = false;
             }
+            print(team.EndGame);
+            if(team.EndGame){
+                GameManager.Instance.EndGame();
+            }
         }
     }
 

@@ -47,6 +47,13 @@ public class Team : ParseObject
         set { SetProperty<int>(value, "DayTwoTokenCount"); }
     }
 
+    [ParseFieldName("endGame")]
+    public bool EndGame
+    {
+        get { return GetProperty<bool>("EndGame"); }
+        set { SetProperty<bool>(value, "EndGame"); }
+    }
+
     public bool IsDayOneCardVisible(){
         return DayOneTokenCount != null && DayOneTokenCount >= 3;
     }

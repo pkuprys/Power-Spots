@@ -11,12 +11,15 @@ public class GameManager : Singleton<GameManager> {
     private SpotsManager spotsManager;
     private string spotNameThatShouldHaveToken;
     private bool updateTokens = true;
+    private TimerDothAppear timerDothAppear;
 
     public int TokenCount {get; set;}
     
     protected GameManager(){}
 		
-	void Start () {}
+	void Start () {
+        timerDothAppear = gameObject.AddComponent<TimerDothAppear>();
+    }
     void Update () {}
 
     public IEnumerator Challenge(string spotName){
@@ -65,5 +68,9 @@ public class GameManager : Singleton<GameManager> {
         bool returnValue = updateTokens;
         updateTokens = false;
         return returnValue;
+    }
+    
+    public void EndGame(){
+        timerDothAppear.Countdown = true;
     }
 }

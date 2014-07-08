@@ -18,8 +18,7 @@ public class GraphicManager : MonoBehaviour {
     private IEnumerator PickGraphic(){
         bool mostSpotsTaken = false;
         bool mostSpotsOwned = false;
-//        string currentTeamId = LoginManager.Instance.GetSelectedTeam().ObjectId;
-        string currentTeamId = "1pmt2ckWuY";
+        string currentTeamId = LoginManager.Instance.GetSelectedTeam().ObjectId;
         Dictionary<string, int> teamsCurrentSpots = new Dictionary<string, int>();
         Dictionary<string, int> teamsMostSpots = new Dictionary<string, int>();
         var getTeams = new ParseQuery<Team>().FindAsync();
