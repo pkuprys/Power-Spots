@@ -18,7 +18,7 @@ var zoom : int=17;										 //Current zoom level
 private var multiplier:float; 							 //1 for a size=640x640 tile, 2 for size=1280*1280 tile, etc. Automatically set when selecting tile size
 var key : String="Fmjtd%7Cluur29072d%2Cbg%3Do5-908s00"; //AppKey (API key) code obtained from your maps provider (MapQuest, Google, etc.). 
 														 //Default MapQuest key for demo purposes only (with limitations). Please get your own key before you start yout project.
-														 
+//Fmjtd%7Cluubn9a7n9%2C80%3Do5-90aluf	 
 var maptype : String[];									 //Array including available map types
 var mapSize : int[];									 //Array including available map sizes(pixels)
 var index :int;											 //maptype array index. 
@@ -492,80 +492,6 @@ function MapPosition(){
 		//Dark with White roads
 		//url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x8da9cb&style=feature:landscape%7Celement:geometry%7Ccolor:0x111111&style=feature:road%7Celement:geometry%7Ccolor:0xbbbbbb%7Cvisibility:simplified%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x222222&style=feature:administrative%7Celement:geometry%7Ccolor:0xffffff%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x010101";
 
-
-
-/*[
-    {
-        "stylers": [
-            {
-                "hue": "#ff1a00"
-            },
-            {
-                "invert_lightness": true
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 33
-            },
-            {
-                "gamma": 0.5
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#2D333C"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#eeeeee"
-            },
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "weight": 3
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#2D333C"
-            }
-        ]
-    }
-]*/
 
 	//=================================================================================================
 

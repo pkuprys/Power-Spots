@@ -3514,7 +3514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   user: {fileID: 0}
-  simGPS: 1
+  simGPS: 0
   userSpeed: 10
   realSpeed: 1
   fixLat: 41.7901115
@@ -3525,7 +3525,7 @@ MonoBehaviour:
   maxZoom: 17
   minZoom: 17
   zoom: 17
-  key: Fmjtd%7Cluubn9a7n9%2C80%3Do5-90aluf
+  key: Fmjtd%7Cluur29072d%2Cbg%3Do5-908s00
   maptype: []
   mapSize: 
   index: 0
@@ -4227,7 +4227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: key
-      value: Fmjtd%7Cluubn9a7n9%2C80%3Do5-90aluf
+      value: Fmjtd%7Cluur29072d%2Cbg%3Do5-908s00
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: fixLat
@@ -4259,7 +4259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: simGPS
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: m_RootOrder
