@@ -94,3 +94,36 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 		});
 	}
 });
+
+/**
+ * This method checks whether the countdown value in the GameConfiguration table is 
+ * being updated to end the game. If it is, it will set each team's endGame boolean 
+ * value to true. If it is not, it will set it to false.
+ */
+Parse.Cloud.beforeSave("GameConfiguration", function(request, response) {
+	var key = request.object.get("key");
+	if(typeof(key) == 'undefined' || key != 'countdown') {
+		response.success();
+	}
+	
+	var endGame = false;
+	var value = request.object.get("value");
+	if(typeof(value) != 'undefined' && value == 'on'){
+		endGame = true;
+	}	
+	var getTeams = new Parse.Query("Team");
+	getTeams.find({
+		success: function(teams){
+			for(var i = 0; i < teams.length; i++){
+				teams[i].set("endGame", endGame);
+				teams[i].save();
+			}
+			console.log("Setting all teams' endGame status to " + endGame);
+			response.success();
+		},
+		error: function(error) {
+			console.log(error);
+			response.error("An error has occurred, please try again.");
+		}
+	});
+});
