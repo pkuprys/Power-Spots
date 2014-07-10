@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pinDialog: {fileID: 100006, guid: 0abe04b4849084750843eeb002ad30ed, type: 2}
-  xPosDialog: .100000001
-  yPosDialog: 1
+  xPosDialog: .150000006
+  yPosDialog: 1.88900006
   zPosDialog: -10
 --- !u!1001 &100100000
 Prefab:

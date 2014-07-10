@@ -9,6 +9,6 @@ public class PinDialog : MonoBehaviour {
     void Update(){}
 
     public void OnGUI(){
-        StringToEdit = GUI.TextField(new Rect(Screen.width/2, Screen.height/2, 50, 30), StringToEdit, 4);
+		StringToEdit = GUI.TextField(new Rect(Screen.width/2, Screen.height/4, 50, 30), StringToEdit, 4);
     }
 }
