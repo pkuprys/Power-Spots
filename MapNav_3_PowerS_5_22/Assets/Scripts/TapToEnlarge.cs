@@ -9,6 +9,7 @@ public class TapToEnlarge : MonoBehaviour {
 		float myScaleX;
 		float myScaleY;
 		float myScaleZ;
+		public static bool cardOut;
 
 		void Start(){
 				myOriginalX = transform.position.x;
@@ -24,12 +25,14 @@ public class TapToEnlarge : MonoBehaviour {
 
 		void OnMouseDown(){
 				mouseCount++;
-				if (mouseCount % 2 == 1) {
+		if (mouseCount % 2 == 1 && !cardOut) {
 						transform.position = new Vector3 (-0.002015591f, 0.8994448f, -6.0f);
-						transform.localScale = new Vector3 (7.814952f, 4.699941f, 3.25838f);
+			cardOut = true;
+			transform.localScale = new Vector3 (this.transform.localScale.x*3, this.transform.localScale.y*3, 3.25838f);
 				} else if (mouseCount % 2 == 0) {
 						transform.position = new Vector3 (myOriginalX, myOriginalY, myOriginalZ);
 						transform.localScale = new Vector3 (myScaleX, myScaleY, myScaleZ);
+			cardOut = false;
 				}
 
 		}

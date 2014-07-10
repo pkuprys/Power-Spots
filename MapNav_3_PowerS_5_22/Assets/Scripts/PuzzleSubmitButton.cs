@@ -7,9 +7,9 @@ public class PuzzleSubmitButton : MonoBehaviour {
 
 		public GameObject lineQuad;
 		public GameObject circleQuad;
-		public Texture redLineTexture;
-		public Texture blueLineTexture;
-		public Texture blueCircleTexture;
+	//public Texture aquaLineTexture;
+		public Texture whiteLineTexture;
+		public Texture whiteCircleTexture;
 		public TextMesh pressMeText;
 		public TextMesh gibberishTextOBJ;
 
@@ -80,8 +80,8 @@ public class PuzzleSubmitButton : MonoBehaviour {
 
 				yield return new WaitForSeconds (5);
 				if (GameObject.Find ("Answer_Field").GetComponent<TextInput> ().StringToEdit.Equals (answer)) {
-						lineQuad.renderer.material.mainTexture = blueLineTexture;
-						circleQuad.renderer.material.mainTexture = blueCircleTexture;
+						lineQuad.renderer.material.mainTexture = whiteLineTexture;
+						circleQuad.renderer.material.mainTexture = whiteCircleTexture;
 						pressMeText.renderer.enabled = true; 
 						puzzleSolvEd = true;
 				}
