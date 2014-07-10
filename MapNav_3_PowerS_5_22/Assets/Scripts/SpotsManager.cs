@@ -82,15 +82,14 @@ public class SpotsManager : MonoBehaviour {
             Team team = LoginManager.Instance.GetSelectedTeam();
             var fetch = team.FetchAsync();
             while(!fetch.IsCompleted) yield return null;
+            if(team.EndGame){
+                GameManager.Instance.EndGame();
+            }
             if(UpdateTokens){
                 traySide.ShowTimeline = team.IsTimelineButtonActive();
                 traySide.TokenCount = team.GetTokenCount();
                 GameManager.Instance.TokenCount = team.GetTokenCount();
                 UpdateTokens = false;
-            }
-            print(team.EndGame);
-            if(team.EndGame){
-                GameManager.Instance.EndGame();
             }
         }
     }

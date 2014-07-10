@@ -115,10 +115,17 @@ Parse.Cloud.beforeSave("GameConfiguration", function(request, response) {
 	getTeams.find({
 		success: function(teams){
 			for(var i = 0; i < teams.length; i++){
+				console.log("Setting " + teams[i].get("name") + "'s endGame status to " + endGame);
 				teams[i].set("endGame", endGame);
-				teams[i].save();
+				teams[i].save({
+					success: function(result){
+						console.log("Team endgame update successful");
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
 			}
-			console.log("Setting all teams' endGame status to " + endGame);
 			response.success();
 		},
 		error: function(error) {

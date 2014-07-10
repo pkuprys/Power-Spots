@@ -18,7 +18,7 @@ public class GameManager : Singleton<GameManager> {
     protected GameManager(){}
 		
 	void Start () {
-        timerDothAppear = gameObject.AddComponent<TimerDothAppear>();
+        timerDothAppear = gameObject.transform.GetComponent<TimerDothAppear>();
     }
     void Update () {}
 

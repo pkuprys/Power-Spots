@@ -11,8 +11,8 @@ public class TimerDothAppear : MonoBehaviour {
 
 	void OnGUI(){
         if(Countdown){
-            print("IN");
-        	if(minutes <= 0 && seconds <= 0 && milliseconds <= 0){
+        	if(minutes < 0){
+                Countdown = false;
                 Application.LoadLevel("WinLose");
             }
 
@@ -28,7 +28,7 @@ public class TimerDothAppear : MonoBehaviour {
     		}
     		milliseconds -= Time.deltaTime * 60;
             string timerTime = string.Format("{0}:{1}:{2}", minutes, seconds, (int)milliseconds);
-            GUI.Label(new Rect(Screen.width-250, 10, 300, 20), "Signal Loss Countdown: \n             " + timerTime, timerGUI);
+            GUI.Label(new Rect(Screen.width-500, 10, 300, 20), "Signal Loss Countdown: \n             " + timerTime, timerGUI);
         }
 	}
 }
