@@ -486,7 +486,7 @@ function MapPosition(){
 
 
 		//All dark
-		url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x8da9cb&style=feature:landscape%7Celement:geometry%7Ccolor:0x111111&style=feature:road%7Celement:geometry%7Ccolor:0x000000%7Cvisibility:simplified%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x222222&style=feature:administrative%7Celement:geometry%7Ccolor:0xffffff%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x010101";
+		url="http://maps.google.com/maps/api/staticmap?center="+fixLat+","+fixLon+"&zoom="+zoom+"&key=AIzaSyBvpEyUNynvRSniUVS-JyyPnWsQLLs_aJU&size=640x640&scale=2&format=png32&maptype=roadmap&sensor=false&style=feature:all%7Celement:labels%7Cvisibility:off&style=feature:water%7Celement:geometry%7Ccolor:0x8da9cb&style=feature:landscape%7Celement:geometry%7Ccolor:0x111111&style=feature:road%7Celement:geometry%7Ccolor:0x000000%7Cvisibility:simplified%7Clightness:-37&style=feature:poi%7Celement:geometry%7Ccolor:0x222222&style=feature:administrative%7Celement:geometry%7Ccolor:0xffffff%7Cweight:0.6%7Cvisibility:on%7Celement:labels.icon%7Cvisibility:off&style=feature:poi.park%7Celement:geometry%7Ccolor:0x010101";
 
 
 		//Dark with White roads
