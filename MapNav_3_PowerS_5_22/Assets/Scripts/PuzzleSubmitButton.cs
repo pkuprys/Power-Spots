@@ -31,7 +31,7 @@ public class PuzzleSubmitButton : MonoBehaviour {
 
 		private bool doneGibberish = true;
 
-	public static bool puzzleSolvEd;
+		public static bool puzzleSolvEd;
 
 		void OnAwake () {
 
@@ -50,7 +50,7 @@ public class PuzzleSubmitButton : MonoBehaviour {
 								triggeredTimer = true;
 						}
 				}
-				if(triggeredRandomText == true && updates >= 5)
+			if(triggeredRandomText == true && updates >= 3)
 				{
 						randomChar1 = System.Convert.ToChar(Random.Range(32,127));
 						randomChar2 = System.Convert.ToChar(Random.Range(32,127));

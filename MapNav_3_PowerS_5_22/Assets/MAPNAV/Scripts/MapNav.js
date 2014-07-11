@@ -1013,11 +1013,11 @@ function OnGUI () {
 			}*/	
 		}
 		//Update map and center user position 
-		/*if (GUI.Button(Rect(0,screenY/24+10,screenX/10,screenY/24), centre)){
+		if (GUI.Button(Rect(10, screenY -40,screenX/10, 30), centre)){
 			centering=true;
 			MapPosition();
 			ReScale();
-		}*/
+		}
 		//Show GPS Status info. Please make sure the GPS-Status.js script is attached and enabled in the map object.
 
 		//*************

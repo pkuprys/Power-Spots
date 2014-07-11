@@ -1652,6 +1652,14 @@ Prefab:
       propertyPath: gibberishTextOBJ
       value: 
       objectReference: {fileID: 770963768}
+    - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
+      propertyPath: whiteLineTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 7dc0239c3078246de9424fdb7d532288, type: 3}
+    - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
+      propertyPath: whiteCircleTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 524620556b54a4521a0e7432ad5a71e6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
   m_RootGameObject: {fileID: 1012208954}
@@ -1988,9 +1996,8 @@ MonoBehaviour:
   jibberishOBJ: {fileID: 770963768}
   lineQuad: {fileID: 51358859}
   circleQuad: {fileID: 1712467775}
-  redLineTexture: {fileID: 2800000, guid: c7d5863a236f0441ca95c3dec9f246b0, type: 3}
-  blueLineTexture: {fileID: 2800000, guid: 257394cbd3ddf4079aa4adef179c9824, type: 3}
-  blueCircleTexture: {fileID: 2800000, guid: da6183117c9f048a496c45997c2e9cf9, type: 3}
+  whiteLineTexture: {fileID: 2800000, guid: 7dc0239c3078246de9424fdb7d532288, type: 3}
+  whiteCircleTexture: {fileID: 2800000, guid: 524620556b54a4521a0e7432ad5a71e6, type: 3}
   pressMeText: {fileID: 1547020223}
   gibberishTextOBJ: {fileID: 770963768}
 --- !u!23 &1012208957
@@ -2078,6 +2085,18 @@ Prefab:
     - target: {fileID: 400000, guid: 635e54ff758fa400f962990c5a532b3b, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 635e54ff758fa400f962990c5a532b3b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 635e54ff758fa400f962990c5a532b3b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 635e54ff758fa400f962990c5a532b3b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 635e54ff758fa400f962990c5a532b3b, type: 2}
@@ -2181,7 +2200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1241569840
 Transform:
   m_ObjectHideFlags: 0
@@ -4713,7 +4732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yellowCircletexture: {fileID: 2800000, guid: b29bc5b01260e4c69819711642d022ca, type: 3}
-  blueCircletexture: {fileID: 2800000, guid: da6183117c9f048a496c45997c2e9cf9, type: 3}
+  blueCircletexture: {fileID: 2800000, guid: 524620556b54a4521a0e7432ad5a71e6, type: 3}
   pressMeText: {fileID: 1547020223}
   numAnswersRequired: 1
 --- !u!23 &1712467778
@@ -4728,7 +4747,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: fceb0dc22bcbf4d659aeb06f0c8d2dba, type: 2}
+  - {fileID: 2100000, guid: 779062b645336414ab5862ca9297dced, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4921,7 +4940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1845065582
 Transform:
   m_ObjectHideFlags: 0
@@ -6021,7 +6040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2042686724
 Transform:
   m_ObjectHideFlags: 0
