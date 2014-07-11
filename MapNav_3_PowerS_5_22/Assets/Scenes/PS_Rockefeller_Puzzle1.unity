@@ -2023,7 +2023,7 @@ MonoBehaviour:
   xPos: 722.5
   yPos: 505.600006
   width: 250
-  height: 30
+  height: 40
 --- !u!4 &724059759
 Transform:
   m_ObjectHideFlags: 0
@@ -4620,7 +4620,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2f9ef2e076cf342fba7100a1957d3404, type: 2}
       propertyPath: height
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2f9ef2e076cf342fba7100a1957d3404, type: 2}
       propertyPath: m_Name
