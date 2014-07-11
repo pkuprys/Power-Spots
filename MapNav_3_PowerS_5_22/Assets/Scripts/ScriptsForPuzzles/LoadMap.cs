@@ -14,8 +14,15 @@ public class LoadMap : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
-        GameManager.Instance.EndChallenge(false);
-		Application.LoadLevel("PS_MainMapScene");
+		if (PuzzleSubmitButton.puzzleSolvEd) {
+			GameManager.Instance.EndChallenge (true);
+			Application.LoadLevel ("PS_MainMapScene");
+			PuzzleSubmitButton.puzzleSolvEd = false;
+		}
+		else{
+        	GameManager.Instance.EndChallenge(false);
+			Application.LoadLevel("PS_MainMapScene");
 	}
 
+}
 }
