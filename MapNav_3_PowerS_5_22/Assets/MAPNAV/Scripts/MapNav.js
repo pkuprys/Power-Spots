@@ -706,7 +706,7 @@ function Update(){
 	}	
 	
 	//PINCH TO ZOOM ================================================================================================
-	if(pinchToZoom){
+	/*if(pinchToZoom){
 		if(Input.touchCount == 2 && mapping==false){
 			touch = Input.GetTouch(0);
 			touch2 = Input.GetTouch(1);
@@ -778,7 +778,7 @@ function Update(){
 				ReScale();
 			}
 		}
-	}
+	}*/
 	
 	//DRAG TO PAN ==================================================================================================
 	if(dragToPan){
@@ -932,7 +932,7 @@ function OnGUI () {
 			}    
 		}*/
 		//3D Zoom Buttons
-		if(triDView){
+		/*if(triDView){
 			//Zoom In button
 			if(GUI.Button(Rect(screenX/5,0,screenX/5,screenY/12), "zoom +")){
 				if(zoom<maxZoom){
@@ -948,7 +948,7 @@ function OnGUI () {
 					MapPosition();
 					ReScale();
 				}
-			}
+			}*/
 		//2D Zoom Buttons
 		}else{
 			//Zoom In button
@@ -1030,7 +1030,7 @@ function OnGUI () {
 				info=true;
 		}*/
 		//////////////////GUI.EndGroup ();
-	}
+	//}
 }
 
 //Translate decimal latitude to Degrees Minutes and Seconds

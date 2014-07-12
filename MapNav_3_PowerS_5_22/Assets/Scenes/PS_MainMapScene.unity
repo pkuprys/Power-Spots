@@ -4619,7 +4619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   user: {fileID: 0}
-  simGPS: 1
+  simGPS: 0
   userSpeed: 10
   realSpeed: 1
   fixLat: 41.7901115
@@ -4651,7 +4651,7 @@ MonoBehaviour:
   triDView: 0
   ready: 0
   freeCam: 0
-  pinchToZoom: 1
+  pinchToZoom: 0
   dragToPan: 1
   mapDisabled: 0
   mapping: 0
@@ -8657,7 +8657,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: simGPS
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: m_RootOrder
@@ -8677,6 +8677,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
+      propertyPath: pinchToZoom
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
