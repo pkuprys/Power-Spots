@@ -47,6 +47,10 @@ public class GameManager : Singleton<GameManager> {
             if(success){
                 spotNameThatShouldHaveToken = pendingChallenge.Spot.Name;
             }
+            else{
+                if(spotsManager != null) spotsManager.UpdateTokens = true;
+                else updateTokens = true;
+            }
             pendingChallenge.Success = success;
             pendingChallenge.SaveAsync();
         }

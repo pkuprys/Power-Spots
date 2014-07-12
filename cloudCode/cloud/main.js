@@ -69,7 +69,7 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 				}
 				else{
 					console.log("Incrementing team token count for day: " + day);
-					var column = day === "1" ? "dayOneTokenCount" : "dayTwoTokenCount";
+					var column = day == "1" ? "dayOneTokenCount" : "dayTwoTokenCount";
 					console.log(column);
 					team.increment(column);
 					team.save();
