@@ -5,7 +5,7 @@
  * If they have not owned the spot before, then this will set them as the owner if the 
  * challenge is successfully completed
  */
-Parse.Cloud.beforeSave("Challenge", function(request, response) {
+Parse.Cloud.afterSave("Challenge", function(request) {
 	//get day
 	var day = "1";
 	var configQuery = new Parse.Query("GameConfiguration");
@@ -17,7 +17,8 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 		},
 		error: function(error) {
 			console.log(error);
-			response.error("An error has occurred, please try again.");
+			console.log("An error has occurred, please try again.");
+			return;
 		}
 	});
 	
@@ -29,28 +30,28 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
   		var spot = request.object.get("spot");
   		var team = request.object.get("team");
   		if(spot == null || team == null){
-  			response.error("An error has occurred, please try again.");
+			console.log("not spot or team, cannot create challenge");
+			return;
   		}
   		spot.fetch({
   			success: function(spot) {
     			if(spot.get("owner") && spot.get("owner").id === team.id){
     				console.log("Team already owns this spot");
-    				response.error("Your team has already claimed this Spot once.");
     			}
     			else{
     				console.log("Attempting new challenge.");
-    				response.success();
+    				return;
     			}
   			},
   			error: function(error) {
-    			response.error("An error has occurred, please try again.");
+    			console.log("An error has occurred, please try again.");
+    			return;
   			}
 		});
 	}
 	else if(!success){
 		// don't do anything because it's a failed attempt
 		console.log("Failed challenge attempt.");
-	    response.success();
 	}
 	else{
 		// they have successfully completed the challenge, so award the spot to them
@@ -64,7 +65,7 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 		query.equalTo("success", true);
 		query.count({
 			success: function(count) {
-				if(count > 0){
+				if(count > 1){
 					console.log("Spot already claimed once.");
 				}
 				else{
@@ -76,7 +77,8 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 				}
 			},
 			error: function(error) {
-				response.error("An error has occurred, please try again.");
+				console.log("An error has occurred, please try again.");
+				return;
 			}
 		});
 		
@@ -86,10 +88,10 @@ Parse.Cloud.beforeSave("Challenge", function(request, response) {
 				console.log("spot claimed");
 				spot.set("owner", request.object.get("team"));
 				spot.save();
-				response.success();			
   			},
 			error: function(error) {
-				response.error("An error has occurred, please try again.");
+				console.log("An error has occurred, please try again.");
+				return;
 			}
 		});
 	}
