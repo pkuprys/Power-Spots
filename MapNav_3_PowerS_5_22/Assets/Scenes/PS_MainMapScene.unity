@@ -3041,7 +3041,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 971553232}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 2.90621066, y: -.306382239, z: 3.47255969}
+  m_LocalPosition: {x: 2.66779065, y: -.306382179, z: 3.02190256}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1023152418}
@@ -3069,12 +3069,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7112d7a21adae0242a5ebd288dfc8799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lat: 41.7924805
-  lon: -87.5981216
-  height: 50
+  lat: 41.7919884
+  lon: -87.5985413
+  height: 50.0000076
   orientation: 0
-  scaleX: .187945426
-  scaleY: .187945426
+  scaleX: .187898383
+  scaleY: .187898383
   scaleZ: 0
 --- !u!114 &971553236
 MonoBehaviour:
@@ -10186,7 +10186,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .109999999
+  m_Radius: .0599999987
   m_Center: {x: 0, y: .0199999996, z: .0393701643}
 --- !u!54 &1664391892
 Rigidbody:
@@ -13239,12 +13239,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7112d7a21adae0242a5ebd288dfc8799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lat: 41.7923851
-  lon: -87.6000595
-  height: 50
+  lat: 41.7919769
+  lon: -87.6001205
+  height: 50.0000076
   orientation: 0
-  scaleX: .188197419
-  scaleY: .188197419
+  scaleX: .188572377
+  scaleY: .188572377
   scaleZ: 0
 --- !u!114 &2081977880
 MonoBehaviour:

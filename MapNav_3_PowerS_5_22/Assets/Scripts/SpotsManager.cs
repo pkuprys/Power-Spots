@@ -12,10 +12,8 @@ public class SpotsManager : MonoBehaviour {
     private Dictionary<string, Spot> spots = new Dictionary<string, Spot>(GameConstants.SPOT_COUNT);
     private DateTime? lastUpdatedTime;
     private Tray_Side traySide;
-	//private GameObject token0;
     public bool UpdateTokens {get; set;}
     public GameObject Token;
-
 
 
 	void Start () {
