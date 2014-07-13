@@ -22,6 +22,7 @@ public class LoadMap : MonoBehaviour {
 		else{
         	GameManager.Instance.EndChallenge(false);
 			Application.LoadLevel("PS_MainMapScene");
+			PuzzleSubmitButton.puzzleSolvEd = false;
 	}
 
 }

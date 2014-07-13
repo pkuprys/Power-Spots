@@ -5090,7 +5090,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2e1bd11e9763f47e58a5423c3fcf0269, type: 2}
+  - {fileID: 2100000, guid: 18d5fe93d049743848cf5b4146f1edaf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5370,6 +5370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enlargeMultiplier: 2.5
 --- !u!23 &1249084274
 Renderer:
   m_ObjectHideFlags: 0
@@ -5566,6 +5567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enlargeMultiplier: 2.5
 --- !u!23 &1489714220
 Renderer:
   m_ObjectHideFlags: 0
@@ -7184,6 +7186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enlargeMultiplier: 2.5
 --- !u!23 &2037363749
 Renderer:
   m_ObjectHideFlags: 0
