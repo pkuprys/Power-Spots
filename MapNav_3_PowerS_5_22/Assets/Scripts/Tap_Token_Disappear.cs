@@ -10,7 +10,6 @@ public class Tap_Token_Disappear : MonoBehaviour {
 	void Start(){
 		Team team = LoginManager.Instance.GetSelectedTeam();
 		teamColorParticleTexture = Resources.Load("hexSpots/" + team.Color + GameConstants.COLOR_SUFFIX, typeof(Texture)) as Texture;
-
 		spotsManager = GameObject.Find ("SpotsManager").GetComponent<SpotsManager> ();
 	}
 
@@ -20,7 +19,8 @@ public class Tap_Token_Disappear : MonoBehaviour {
 		renderer.material.shader = Shader.Find("Unlit/Transparent");
 		prefabInstance = Instantiate(poof, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity) as Transform;
         spotsManager.UpdateTokens = true;
-        this.renderer.enabled = false;
-		Destroy (this, 2.0f);
+		this.renderer.enabled = false;
+		this.gameObject.SetActive (false);
+		Destroy (this.gameObject, 1.0f);
 	}
 }
