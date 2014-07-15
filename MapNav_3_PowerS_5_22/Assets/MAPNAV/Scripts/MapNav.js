@@ -706,7 +706,7 @@ function Update(){
 	}	
 	
 	//PINCH TO ZOOM ================================================================================================
-	/*if(pinchToZoom){
+	if(pinchToZoom){
 		if(Input.touchCount == 2 && mapping==false){
 			touch = Input.GetTouch(0);
 			touch2 = Input.GetTouch(1);
@@ -778,7 +778,7 @@ function Update(){
 				ReScale();
 			}
 		}
-	}*/
+	}
 	
 	//DRAG TO PAN ==================================================================================================
 	if(dragToPan){

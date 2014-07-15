@@ -4654,7 +4654,7 @@ MonoBehaviour:
   triDView: 0
   ready: 0
   freeCam: 0
-  pinchToZoom: 0
+  pinchToZoom: 1
   dragToPan: 1
   mapDisabled: 0
   mapping: 0
@@ -8438,12 +8438,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7112d7a21adae0242a5ebd288dfc8799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lat: 41.7877541
-  lon: -87.5987549
-  height: 50
+  lat: 41.7880707
+  lon: -87.5995712
+  height: 49.9999924
   orientation: 0
-  scaleX: .187780276
-  scaleY: .187780276
+  scaleX: .187795877
+  scaleY: .187795877
   scaleZ: 0
 --- !u!114 &1365079262
 MonoBehaviour:
@@ -8684,7 +8684,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: pinchToZoom
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
