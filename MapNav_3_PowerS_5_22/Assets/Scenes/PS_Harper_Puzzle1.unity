@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enlargeMultiplier: 2.5
 --- !u!23 &123255337
 Renderer:
   m_ObjectHideFlags: 0
@@ -1559,7 +1560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420c7198899df4c9e8e05cbd5fae546e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: volta
+  answer:
+  - volta
   jibberishOBJ: {fileID: 1722297446}
   lineQuad: {fileID: 1263548647}
   circleQuad: {fileID: 1504690919}
@@ -4168,6 +4170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enlargeMultiplier: 2.5
 --- !u!23 &642138141
 Renderer:
   m_ObjectHideFlags: 0
@@ -7214,6 +7217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enlargeMultiplier: 2.5
 --- !u!23 &2057871903
 Renderer:
   m_ObjectHideFlags: 0
@@ -7319,7 +7323,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: answer
-      value: volta
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: jibberishOBJ
@@ -7361,6 +7365,10 @@ Prefab:
       propertyPath: whiteCircleTexture
       value: 
       objectReference: {fileID: 2800000, guid: 524620556b54a4521a0e7432ad5a71e6, type: 3}
+    - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
+      propertyPath: answer.Array.data[0]
+      value: volta
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
   m_RootGameObject: {fileID: 309322397}
