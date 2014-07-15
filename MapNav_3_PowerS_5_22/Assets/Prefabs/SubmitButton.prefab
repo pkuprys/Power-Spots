@@ -82,7 +82,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420c7198899df4c9e8e05cbd5fae546e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answer: 123456789
+  answer:
+  - hello
+  jibberishOBJ: {fileID: 0}
+  lineQuad: {fileID: 0}
+  circleQuad: {fileID: 0}
+  whiteLineTexture: {fileID: 0}
+  whiteCircleTexture: {fileID: 0}
+  pressMeText: {fileID: 0}
+  gibberishTextOBJ: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

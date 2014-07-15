@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class PuzzleSubmitButton : MonoBehaviour {
-    public string answer = "";
+    public List<string> answer;
 		public TextMesh jibberishOBJ;
 
 		public GameObject lineQuad;
@@ -79,7 +81,7 @@ public class PuzzleSubmitButton : MonoBehaviour {
 
 
 				yield return new WaitForSeconds (5);
-				if (GameObject.Find ("Answer_Field").GetComponent<TextInput> ().StringToEdit.Equals (answer)) {
+				if (answer.Contains(GameObject.Find ("Answer_Field").GetComponent<TextInput> ().StringToEdit.ToLower())) {
 						lineQuad.renderer.material.mainTexture = whiteLineTexture;
 						circleQuad.renderer.material.mainTexture = whiteCircleTexture;
 						pressMeText.renderer.enabled = true; 
