@@ -48,7 +48,7 @@ public class GameManager : Singleton<GameManager> {
                 spotNameThatShouldHaveToken = pendingChallenge.Spot.Name;
             }
             else{
-                if(GetSpotsManager() != null) GetSpotsManager().UpdateTokens = true;
+                if(GetSpotsManager() != null) spotsManager.UpdateTokens = true;
                 else updateTokens = true;
             }
             pendingChallenge.Success = success;
@@ -59,6 +59,9 @@ public class GameManager : Singleton<GameManager> {
     private SpotsManager GetSpotsManager(){
         if(spotsManager == null){
             GameObject spotsManagerObject = GameObject.Find("SpotsManager");
+            if(spotsManagerObject == null){
+                return null;
+            }
             spotsManager = spotsManagerObject.GetComponent<SpotsManager>();
         }
         return spotsManager;
