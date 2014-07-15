@@ -14,6 +14,10 @@ public class SpotsManager : MonoBehaviour {
     private Tray_Side traySide;
     public bool UpdateTokens {get; set;}
     public GameObject Token;
+    public float tokenXPosition;
+    public float tokenYPosition;
+    public float tokenZPosition;
+    public Camera camera;
 
 
 	void Start () {
@@ -97,7 +101,7 @@ public class SpotsManager : MonoBehaviour {
         Texture texture = Resources.Load(coloredSpotName, typeof(Texture)) as Texture;
         mapSpot.renderer.material.mainTexture = texture;
         if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId) && GameManager.Instance.HasToken(mapSpot.gameObject.name)){
-            GameObject token0 = Instantiate(Token, new Vector3(0,0,0), Quaternion.identity) as GameObject;
+            GameObject token0 = Instantiate(Token, new Vector3(tokenXPosition,tokenYPosition,tokenZPosition), Quaternion.identity) as GameObject;
 			token0.renderer.material.mainTexture = texture;
         }
     }
