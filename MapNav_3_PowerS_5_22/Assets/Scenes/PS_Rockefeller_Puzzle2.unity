@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yellowCircletexture: {fileID: 2800000, guid: b29bc5b01260e4c69819711642d022ca, type: 3}
-  blueCircletexture: {fileID: 2800000, guid: da6183117c9f048a496c45997c2e9cf9, type: 3}
+  blueCircletexture: {fileID: 2800000, guid: 524620556b54a4521a0e7432ad5a71e6, type: 3}
   pressMeText: {fileID: 586528032}
   numAnswersRequired: 1
 --- !u!23 &316159254
