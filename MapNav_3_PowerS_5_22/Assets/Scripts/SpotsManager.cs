@@ -17,8 +17,6 @@ public class SpotsManager : MonoBehaviour {
     public float tokenXPosition;
     public float tokenYPosition;
     public float tokenZPosition;
-    public Camera camera;
-
 
 	void Start () {
         UpdateTokens = GameManager.Instance.UpdateTokens();
