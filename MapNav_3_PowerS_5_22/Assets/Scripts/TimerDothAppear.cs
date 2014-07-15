@@ -5,7 +5,7 @@ public class TimerDothAppear : MonoBehaviour {
 	public GUIStyle timerGUI;
     public bool Countdown {get; set;}
 
-	private float minutes = 60;
+	private float minutes = 20;
 	private float seconds = 0;
 	private float milliseconds = 0;
 

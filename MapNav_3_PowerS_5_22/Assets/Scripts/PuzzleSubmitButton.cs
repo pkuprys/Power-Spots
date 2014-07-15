@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 
 public class PuzzleSubmitButton : MonoBehaviour {
-    public List<string> answer;
+
+        public List<string> answer;
 		public TextMesh jibberishOBJ;
 
 		public GameObject lineQuad;
@@ -78,8 +79,6 @@ public class PuzzleSubmitButton : MonoBehaviour {
     }
 
 		IEnumerator TimerToBlue () {
-
-
 				yield return new WaitForSeconds (5);
 				if (answer.Contains(GameObject.Find ("Answer_Field").GetComponent<TextInput> ().StringToEdit.ToLower())) {
 						lineQuad.renderer.material.mainTexture = whiteLineTexture;
