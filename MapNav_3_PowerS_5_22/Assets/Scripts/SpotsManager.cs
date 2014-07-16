@@ -85,8 +85,8 @@ public class SpotsManager : MonoBehaviour {
             if(team.EndGame){
                 GameManager.Instance.EndGame();
             }
+            traySide.ShowTimeline = team.IsTimelineButtonActive();
             if(UpdateTokens){
-                traySide.ShowTimeline = team.IsTimelineButtonActive();
                 traySide.TokenCount = team.GetTokenCount();
                 GameManager.Instance.TokenCount = team.GetTokenCount();
                 UpdateTokens = false;
