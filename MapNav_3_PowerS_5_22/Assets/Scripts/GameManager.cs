@@ -68,10 +68,11 @@ public class GameManager : Singleton<GameManager> {
     }
 
     public bool HasToken(string spotName){
-        bool hasToken = spotName != null && spotName.Equals(spotNameThatShouldHaveToken);
-        spotNameThatShouldHaveToken = null;
-        return hasToken;
+        return spotName != null && spotName.Equals(spotNameThatShouldHaveToken);
+    }
 
+    public void ResetSpotTokenName(){
+        spotNameThatShouldHaveToken = null;
     }
 
     public bool UpdateTokens(){
