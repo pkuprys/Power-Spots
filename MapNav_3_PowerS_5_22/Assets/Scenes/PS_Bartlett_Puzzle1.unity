@@ -129,7 +129,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1bd33c7f08b624a2187e616b5b38eddd, type: 2}
+  - {fileID: 2100000, guid: 428fa5ec9de6547dd82c799c789b66ce, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -314,7 +314,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: answer.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: m_LocalPosition.x
@@ -406,11 +406,11 @@ Prefab:
       objectReference: {fileID: 2800000, guid: 524620556b54a4521a0e7432ad5a71e6, type: 3}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: answer.Array.data[1]
-      value: world
+      value: '###'
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: answer.Array.data[0]
-      value: basketball
+      value: table tennis
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
@@ -2775,7 +2775,6 @@ GameObject:
   - 33: {fileID: 444404327}
   - 64: {fileID: 444404326}
   - 23: {fileID: 444404325}
-  - 114: {fileID: 444404324}
   m_Layer: 0
   m_Name: IMG_3
   m_TagString: Untagged
@@ -2795,18 +2794,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1266637920}
   m_RootOrder: 2
---- !u!114 &444404324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 444404322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enlargeMultiplier: 1.5
 --- !u!23 &444404325
 Renderer:
   m_ObjectHideFlags: 0
@@ -2819,7 +2806,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2d1dc99004ebf432bb43a1f93bbc2926, type: 2}
+  - {fileID: 2100000, guid: 5f46759e812b049f9b538753380d695e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5418,7 +5405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answer:
-  - basketball
+  - table tennis
+  - '###'
   jibberishOBJ: {fileID: 1963127089}
   lineQuad: {fileID: 1781335078}
   circleQuad: {fileID: 824226797}

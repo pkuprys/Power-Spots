@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enlargeMultiplier: 3.5
+  enlargeMultiplier: 4
 --- !u!23 &135899493
 Renderer:
   m_ObjectHideFlags: 0
@@ -2085,7 +2085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enlargeMultiplier: 2.5
+  enlargeMultiplier: 3.5
 --- !u!23 &858665639
 Renderer:
   m_ObjectHideFlags: 0
@@ -7112,7 +7112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enlargeMultiplier: 2.5
+  enlargeMultiplier: 4.5
 --- !u!23 &1685843460
 Renderer:
   m_ObjectHideFlags: 0
