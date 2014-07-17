@@ -7174,7 +7174,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: f416daea56a4c4cbaa3190e2d31eca1b, type: 2}
+  - {fileID: 2100000, guid: 8a35882fd82124bc8bc094ebf6cb17fd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -7244,7 +7244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enlargeMultiplier: 2.5
+  enlargeMultiplier: .150000006
 --- !u!23 &2014355716
 Renderer:
   m_ObjectHideFlags: 0

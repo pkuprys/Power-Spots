@@ -4622,7 +4622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   user: {fileID: 0}
-  simGPS: 0
+  simGPS: 1
   userSpeed: 10
   realSpeed: 1
   fixLat: 41.7901115
@@ -8660,7 +8660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: simGPS
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: m_RootOrder
@@ -13225,12 +13225,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7112d7a21adae0242a5ebd288dfc8799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lat: 41.7919769
-  lon: -87.6001205
+  lat: 41.7919617
+  lon: -87.5999374
   height: 50.0000076
   orientation: 0
-  scaleX: .188572377
-  scaleY: .188572377
+  scaleX: .187909052
+  scaleY: .187909052
   scaleZ: 0
 --- !u!114 &2081977880
 MonoBehaviour:

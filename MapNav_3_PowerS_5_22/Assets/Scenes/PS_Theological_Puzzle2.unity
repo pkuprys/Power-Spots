@@ -3847,7 +3847,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: whiteLineTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 58a9736eebcd94a458246a399c15532d, type: 3}
+      objectReference: {fileID: 2800000, guid: d51b25d21fab6499e95e1852400fd3da, type: 3}
     - target: {fileID: 11400000, guid: 378be0e7cae5f40c8a9e5f594df8306b, type: 2}
       propertyPath: whiteCircleTexture
       value: 
@@ -5518,7 +5518,7 @@ MonoBehaviour:
   jibberishOBJ: {fileID: 1057044135}
   lineQuad: {fileID: 1003299487}
   circleQuad: {fileID: 985372914}
-  whiteLineTexture: {fileID: 2800000, guid: 58a9736eebcd94a458246a399c15532d, type: 3}
+  whiteLineTexture: {fileID: 2800000, guid: d51b25d21fab6499e95e1852400fd3da, type: 3}
   whiteCircleTexture: {fileID: 2800000, guid: 524620556b54a4521a0e7432ad5a71e6, type: 3}
   pressMeText: {fileID: 1762324381}
   gibberishTextOBJ: {fileID: 1057044135}
