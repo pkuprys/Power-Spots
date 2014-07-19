@@ -134,7 +134,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5c4027b4d9247412f8473bee675301c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
 --- !u!102 &10200000
 TextMesh:

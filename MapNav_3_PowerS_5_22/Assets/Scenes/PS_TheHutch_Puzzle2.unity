@@ -7244,7 +7244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa16d993ab24217ba2ebfb65c61035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enlargeMultiplier: .150000006
+  enlargeMultiplier: 1.14999998
 --- !u!23 &2014355716
 Renderer:
   m_ObjectHideFlags: 0
