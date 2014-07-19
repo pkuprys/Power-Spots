@@ -85,8 +85,8 @@ public class SpotsManager : MonoBehaviour {
             if(team.EndGame){
                 GameManager.Instance.EndGame();
             }
+            traySide.ShowTimeline = team.IsTimelineButtonActive();
             if(UpdateTokens){
-                traySide.ShowTimeline = team.IsTimelineButtonActive();
                 traySide.TokenCount = team.GetTokenCount();
                 GameManager.Instance.TokenCount = team.GetTokenCount();
                 UpdateTokens = false;
@@ -101,6 +101,7 @@ public class SpotsManager : MonoBehaviour {
         if(owner.ObjectId.Equals(LoginManager.Instance.GetSelectedTeam().ObjectId) && GameManager.Instance.HasToken(mapSpot.gameObject.name)){
             GameObject token0 = Instantiate(Token, new Vector3(tokenXPosition,tokenYPosition,tokenZPosition), Quaternion.identity) as GameObject;
 			token0.renderer.material.mainTexture = texture;
+            GameManager.Instance.ResetSpotTokenName();
         }
     }
 }

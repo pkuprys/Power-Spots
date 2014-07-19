@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d104c6679d88740b3a3b784ae3dd8314
+=======
+guid: 9d99bf26a5e46469fa56e6fa70b32f6d
+>>>>>>> 44fd9f69ce41812a41af916619f2b4c3e2d742de
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -21,7 +25,11 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
+<<<<<<< HEAD
   maxTextureSize: 512
+=======
+  maxTextureSize: 1024
+>>>>>>> 44fd9f69ce41812a41af916619f2b4c3e2d742de
   textureSettings:
     filterMode: -1
     aniso: 1
