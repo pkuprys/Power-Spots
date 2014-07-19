@@ -4622,7 +4622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   user: {fileID: 0}
-  simGPS: 0
+  simGPS: 1
   userSpeed: 10
   realSpeed: 1
   fixLat: 41.7901115
@@ -8660,7 +8660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: simGPS
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67c720eccc09d7147bc8de0975b07678, type: 2}
       propertyPath: m_RootOrder
